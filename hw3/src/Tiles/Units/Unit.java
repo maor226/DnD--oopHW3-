@@ -5,16 +5,14 @@ import Tiles.Tile;
 
 public abstract class Unit extends Tile {
     protected String name;
-    protected Integer healthPool;
-    protected Integer healthAmount;
+    protected Health health;
     protected Integer attackPoints;
     protected Integer defencePoints;
 
     public Unit(Character tile, Point position, String name, Integer healthPool, Integer healthAmount, Integer attackPoints, Integer defencePoints) {
         super(tile, position);
         this.name = name;
-        this.healthPool = healthPool;
-        this.healthAmount = healthAmount;
+        health=new Health(healthPool,healthAmount);
         this.attackPoints = attackPoints;
         this.defencePoints = defencePoints;
     }
@@ -27,12 +25,8 @@ public abstract class Unit extends Tile {
         return name;
     }
 
-    public Integer getHealthPool() {
-        return healthPool;
-    }
-
-    public Integer getHealthAmount() {
-        return healthAmount;
+    public Health getHealth() {
+        return health;
     }
 
     public Integer getAttackPoints() {
