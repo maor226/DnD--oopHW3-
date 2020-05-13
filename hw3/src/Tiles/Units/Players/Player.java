@@ -19,7 +19,7 @@ public abstract class Player extends Unit {
         experience-=50*level;
         level++;
         healthPool+=10*level;
-        healthAmount= healthPool.intValue();
+        healthAmount= healthPool;
         attackPoints+=4*level;
         defencePoints+=level;
     }
