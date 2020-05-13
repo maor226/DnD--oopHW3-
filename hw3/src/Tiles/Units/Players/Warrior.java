@@ -35,10 +35,6 @@ public class Warrior extends Player implements HeroicUnit
     public Integer getRemainingCooldown() {
         return RemainingCooldown;
     }
-    @Override
-    public void GameTick() {
-        RemainingCooldown--;
-    }
 
     @Override
     public void CastAbility() {
