@@ -24,9 +24,10 @@ public abstract class Unit extends Tile {
     public String getName() {
         return name;
     }
-
+  
     public PoolInteger getHealth() {
         return health;
+
     }
 
     public Integer getAttackPoints() {
