@@ -1,10 +1,9 @@
 package Tiles.Units.Players;
 
 import Tiles.Point;
+import Tiles.Units.HeroicUnit;
 
-import java.awt.*;
-
-public class Warrior extends Player
+public class Warrior extends Player implements HeroicUnit
 {
     private Integer AbilityCooldown;
     private Integer RemainingCooldown;
@@ -19,7 +18,7 @@ public class Warrior extends Player
     {
         super.LevelUp();
         RemainingCooldown = 0;
-        health.addHealthPool((5*level));;
+        health.AddPool(5*level);
         attackPoints = attackPoints + (2*level);
         defencePoints = defencePoints + level;
     }
@@ -35,5 +34,14 @@ public class Warrior extends Player
     }
     public Integer getRemainingCooldown() {
         return RemainingCooldown;
+    }
+    @Override
+    public void GameTick() {
+        RemainingCooldown--;
+    }
+
+    @Override
+    public void CastAbility() {
+        //TODO
     }
 }
