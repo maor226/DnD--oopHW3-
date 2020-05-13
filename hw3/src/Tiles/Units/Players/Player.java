@@ -1,5 +1,6 @@
 package Tiles.Units.Players;
 
+import Tiles.Board;
 import Tiles.Point;
 import Tiles.Units.Unit;
 
@@ -20,6 +21,19 @@ public abstract class Player extends Unit {
         health.setAmount(health.getPool());
         attackPoints+=4*level;
         defencePoints+=level;
+    }
+    public enum Direction{
+        left('a'),
+        right('d'),
+        up('w'),
+        down('s'),
+        NONE('q');
+
+        Direction(char a) {
+        }
+    }
+    public void MovePlayer(Board board,Direction d){
+        //todo
     }
 
     @Override

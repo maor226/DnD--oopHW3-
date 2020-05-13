@@ -20,7 +20,6 @@ public abstract class Unit extends Tile {
     public abstract void GameTick();
 
     //geters and seters
-
     public String getName() {
         return name;
     }
