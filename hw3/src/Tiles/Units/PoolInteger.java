@@ -1,10 +1,10 @@
 package Tiles.Units;
 
-public class Health {
+public class PoolInteger {
     Integer pool;
     Integer amaunt;
 
-    public Health(Integer pool, Integer amaunt) {
+    public PoolInteger(Integer pool, Integer amaunt) {
         this.pool = pool;
         this.amaunt = amaunt;
     }
