@@ -1,5 +1,7 @@
 package Tiles.Units;
 
+import Tiles.Board;
+
 public interface HeroicUnit {
-    void CastAbility();
+    void CastAbility(Board board);
 }

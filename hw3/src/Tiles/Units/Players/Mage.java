@@ -1,35 +1,42 @@
 package Tiles.Units.Players;
 
+import Tiles.Board;
 import Tiles.Point;
-import java.awt.*;
+import Tiles.Units.HeroicUnit;
+import Tiles.Units.PoolInteger;
 
-public class Mage extends Player  {
+public class Mage extends Player implements HeroicUnit {
 
-    Integer manaPool;
-    Integer currentMana;
+    PoolInteger mana;
     Integer manaCost;
     Integer spellPower;
     Integer hitsCount;
     Integer abilityRange;
 
-    public Mage(Point position, String name, Integer healthPool, Integer healthAmount, Integer attackPoints, Integer defencePoints, Integer experience, Integer level, Integer manapool, Integer spellpower) {
+    public Mage(Point position, String name, Integer healthPool, Integer healthAmount, Integer attackPoints, Integer defencePoints, Integer experience, Integer level,Integer manapool, Integer manaCost, Integer spellPower, Integer hitsCount, Integer abilityRange) {
         super(position, name, healthPool, healthAmount, attackPoints, defencePoints, experience, level);
-        manaPool = manapool;
-        currentMana = (manapool/4);
-        spellPower = spellpower;
+        mana=new PoolInteger(manapool,manapool/4);
+        this.manaCost = manaCost;
+        this.spellPower = spellPower;
+        this.hitsCount = hitsCount;
+        this.abilityRange = abilityRange;
     }
 
-    public void LevelUp()
-    {
+    public void LevelUp() {
         super.LevelUp();
-        manaPool = manaPool+(25*level);
-        currentMana = Math.min(currentMana+(manaPool/4),manaPool);
+        mana.AddPool(25*level);
+        mana.AddAmount(mana.getPool()/4);
         spellPower = spellPower + (10*level);
     }
 
     @Override
     public void GameTick() {
-        currentMana = Math.min(currentMana + level,manaPool);
+        mana.AddAmount(level);
+    }
+
+    @Override
+    public void CastAbility(Board board) {
+        //TODO
     }
 
     //------------------getters-----------------------

@@ -3,8 +3,6 @@ package Tiles.Units.Players;
 import Tiles.Point;
 import Tiles.Units.Unit;
 
-import java.awt.*;
-
 public abstract class Player extends Unit {
     protected Integer experience=0;
     protected Integer level=1;
@@ -19,7 +17,7 @@ public abstract class Player extends Unit {
         experience-=50*level;
         level++;
         health.AddPool(10*level);
-        health.setAmaunt(health.getPool());
+        health.setAmount(health.getPool());
         attackPoints+=4*level;
         defencePoints+=level;
     }
