@@ -12,18 +12,22 @@ public class Warrior extends Player
     public Warrior(Point position, String name, Integer healthPool, Integer healthAmount, Integer attackPoints, Integer defencePoints, Integer experience, Integer level, Integer abilitycooldown) {
         super(position, name, healthPool, healthAmount, attackPoints, defencePoints, experience, level);
         AbilityCooldown = abilitycooldown;
+        RemainingCooldown = 0;
     }
 
     public void LevelUp()
     {
         super.LevelUp();
         RemainingCooldown = 0;
-        healthPool = healthPool + (5*level);
+        health.addHealthPool((5*level));;
         attackPoints = attackPoints + (2*level);
         defencePoints = defencePoints + level;
     }
 
-
+    @Override
+    public void GameTick() {
+        RemainingCooldown--;
+    }
 
 //------------------getters--------------------------
     public Integer getAbilityCooldown() {
@@ -31,10 +35,5 @@ public class Warrior extends Player
     }
     public Integer getRemainingCooldown() {
         return RemainingCooldown;
-    }
-
-    @Override
-    public void GameTick() {
-        RemainingCooldown--;
     }
 }

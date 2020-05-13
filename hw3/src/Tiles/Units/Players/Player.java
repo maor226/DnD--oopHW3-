@@ -18,8 +18,8 @@ public abstract class Player extends Unit {
     public void LevelUp(){
         experience-=50*level;
         level++;
-        healthPool+=10*level;
-        healthAmount= healthPool;
+        health.addHealthPool(10*level);
+        health.refill();
         attackPoints+=4*level;
         defencePoints+=level;
     }
