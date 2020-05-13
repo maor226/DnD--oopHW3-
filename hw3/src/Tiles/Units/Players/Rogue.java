@@ -1,8 +1,10 @@
 package Tiles.Units.Players;
 
+import Tiles.Board;
 import Tiles.Point;
+import Tiles.Units.HeroicUnit;
 
-public class Rogue extends Player {
+public class Rogue extends Player implements HeroicUnit {
 
     private Integer cost;
     private Integer currentEnergy;
@@ -23,6 +25,11 @@ public class Rogue extends Player {
     @Override
     public void GameTick() {
         currentEnergy = Math.min(currentEnergy+10,100);
+    }
+
+    @Override
+    public void CastAbility(Board board) {
+        //TODO
     }
 
     //------------------getters-----------------------

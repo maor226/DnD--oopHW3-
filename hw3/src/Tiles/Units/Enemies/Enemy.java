@@ -6,6 +6,7 @@ import Tiles.Units.Unit;
 public abstract class Enemy extends Unit {
     protected Integer experienceValue;
 
+
     public Enemy(Character tile, Point position, String name, Integer healthPool, Integer healthAmount, Integer attackPoints, Integer defencePoints, Integer experienceValue) {
         super(tile, position, name, healthPool, healthAmount, attackPoints, defencePoints);
         this.experienceValue = experienceValue;

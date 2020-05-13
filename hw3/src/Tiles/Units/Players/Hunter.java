@@ -1,8 +1,10 @@
 package Tiles.Units.Players;
 
+import Tiles.Board;
 import Tiles.Point;
+import Tiles.Units.HeroicUnit;
 
-public class Hunter extends Player {
+public class Hunter extends Player implements HeroicUnit {
 
     private Integer range;
     private Integer arrowsCount;
@@ -14,10 +16,11 @@ public class Hunter extends Player {
         ticksCount=0;
     }
 
-    public void LevelUp()
-    {
+    public void LevelUp(){
         super.LevelUp();
-
+        arrowsCount+=10*level;
+        attackPoints+=2*level;
+        defencePoints+=level;
     }
 
     @Override
@@ -31,7 +34,11 @@ public class Hunter extends Player {
         {
             ticksCount++;
         }
+    }
 
+    @Override
+    public void CastAbility(Board board) {
+        //TODO
     }
 
     //------------------getters-----------------------

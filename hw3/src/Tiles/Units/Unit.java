@@ -27,7 +27,6 @@ public abstract class Unit extends Tile {
   
     public PoolInteger getHealth() {
         return health;
-
     }
 
     public Integer getAttackPoints() {
