@@ -1,5 +1,6 @@
 package Tiles.Units.Players;
 
+import Tiles.Board;
 import Tiles.Point;
 import Tiles.Units.HeroicUnit;
 
@@ -37,7 +38,7 @@ public class Warrior extends Player implements HeroicUnit
     }
 
     @Override
-    public void CastAbility() {
+    public void CastAbility(Board board) {
         //TODO
     }
 }

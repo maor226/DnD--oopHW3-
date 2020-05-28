@@ -32,14 +32,12 @@ public abstract class Unit extends Tile {
     public abstract void GameTick();
 
     //geters and seters
-
     public String getName() {
         return name;
     }
   
     public PoolInteger getHealth() {
         return health;
-
     }
 
     public Integer getAttackPoints() {
