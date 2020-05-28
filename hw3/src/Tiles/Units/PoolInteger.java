@@ -6,22 +6,14 @@ public class PoolInteger {
 
     public PoolInteger(Integer pool, Integer amount) {
         this.pool = pool;
-<<<<<<< HEAD
         this.amount = amount;
-=======
-        this.amount = amaunt;
->>>>>>> 271c39df42e3669a2c7d93e3e28cf59a39101637
     }
 
     public void AddPool(Integer addition){
         setPool(pool+addition);
     }
-<<<<<<< HEAD
-    public void AddAmount(Integer addition){
-        setAmount(amount+addition);
-=======
-    public void AddAmount(Integer addision){
-        setAmount(amount +addision);
+    public void AddAmount(Integer addition) {
+        setAmount(amount + addition);
     }
     public boolean Use(Integer amount){
         if(this.amount>=amount){
@@ -29,7 +21,6 @@ public class PoolInteger {
             return true;
         }
         return false;
->>>>>>> 271c39df42e3669a2c7d93e3e28cf59a39101637
     }
     public void Damage(Integer damage) { setAmount(amount-damage);}
 
@@ -48,11 +39,8 @@ public class PoolInteger {
     public void setAmount(Integer amount) {
         if(amount>pool)
             amount=pool;
-<<<<<<< HEAD
         else if(amount<0)
             amount=0;
-=======
->>>>>>> 271c39df42e3669a2c7d93e3e28cf59a39101637
         this.amount = amount;
     }
 }

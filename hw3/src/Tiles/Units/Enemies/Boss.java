@@ -14,11 +14,11 @@ public class Boss extends Monster implements HeroicUnit {
 
     @Override
     public void GameTick() {
-
+        //todo
     }
 
     @Override
     public void CastAbility(Board board) {
-
+        //todo
     }
 }
