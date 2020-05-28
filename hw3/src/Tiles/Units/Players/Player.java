@@ -19,7 +19,7 @@ public abstract class Player extends Unit {
         experience-=50*level;
         level++;
         health.AddPool(10*level);
-        health.setAmaunt(health.getPool());
+        health.setAmount(health.getPool());
         attackPoints+=4*level;
         defencePoints+=level;
     }
@@ -38,4 +38,5 @@ public abstract class Player extends Unit {
         return level;
     }
 
+    public abstract void GameTick();
 }

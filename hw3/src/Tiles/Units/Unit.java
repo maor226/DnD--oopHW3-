@@ -16,6 +16,18 @@ public abstract class Unit extends Tile {
         this.attackPoints = attackPoints;
         this.defencePoints = defencePoints;
     }
+    public Integer rollAttack()
+    {
+        return (int)(Math.random()*attackPoints);
+    }
+
+    public void getAttacked(Integer damage)
+    {
+        int reduction = damage - ((int)(Math.random()*defencePoints));
+        if(damage>0){
+            health.Damage(damage);
+        }
+    }
 
     public abstract void GameTick();
 
