@@ -3,6 +3,8 @@ package Tiles.Units.Enemies;
 import Tiles.Point;
 import Tiles.Units.Unit;
 
+import javax.swing.text.Position;
+
 public abstract class Enemy extends Unit {
     protected Integer experienceValue;
 
@@ -21,4 +23,7 @@ public abstract class Enemy extends Unit {
     public Integer getExperienceValue() {
         return experienceValue;
     }
+
+
+    public abstract int getVisionRange();
 }

@@ -5,6 +5,8 @@ import Tiles.Point;
 import Tiles.Units.HeroicUnit;
 import Tiles.Units.PoolInteger;
 
+import javax.swing.text.Position;
+
 public class Mage extends Player implements HeroicUnit {
 
     PoolInteger mana;
@@ -30,7 +32,7 @@ public class Mage extends Player implements HeroicUnit {
     }
 
     @Override
-    public void GameTick() {
+    public void GameTick(Player p) {
         mana.AddAmount(level);
     }
 

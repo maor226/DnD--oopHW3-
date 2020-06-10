@@ -4,6 +4,8 @@ import Tiles.Board;
 import Tiles.Point;
 import Tiles.Units.HeroicUnit;
 
+import javax.swing.text.Position;
+
 public class Warrior extends Player implements HeroicUnit
 {
     private Integer AbilityCooldown;
@@ -25,7 +27,7 @@ public class Warrior extends Player implements HeroicUnit
     }
 
     @Override
-    public void GameTick() {
+    public void GameTick(Player p) {
         RemainingCooldown--;
     }
 
