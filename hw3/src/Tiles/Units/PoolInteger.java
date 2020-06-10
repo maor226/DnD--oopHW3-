@@ -22,7 +22,6 @@ public class PoolInteger {
         }
         return false;
     }
-    public void Damage(Integer damage) { setAmount(amount-damage);}
 
     public Integer getPool() {
         return pool;
@@ -42,5 +41,10 @@ public class PoolInteger {
         else if(amount<0)
             amount=0;
         this.amount = amount;
+    }
+
+    public boolean isZero()
+    {
+        return pool==0;
     }
 }

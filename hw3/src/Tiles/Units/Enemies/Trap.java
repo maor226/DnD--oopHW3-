@@ -1,6 +1,7 @@
 package Tiles.Units.Enemies;
 
 import Tiles.Point;
+import Tiles.Units.Players.Player;
 
 public class Trap extends Enemy {
     private Integer visibilityTime;
@@ -18,14 +19,22 @@ public class Trap extends Enemy {
     }
 
     @Override
-    public void GameTick() {
+    public void GameTick(Player p) {
         visible = (ticksCount<visibilityTime);
         if(ticksCount==(visibilityTime+invisibilityTime))
             ticksCount=0;
         else
             ticksCount++;
-        /**add attacking mechanism
-         * check range then attack **/
 
+        if (position.Range(p.getPosition())<2)
+        {
+            p.Attack(rollAttack());
+        }
+
+    }
+
+    @Override
+    public int getVisionRange() {
+        return 0;
     }
 }

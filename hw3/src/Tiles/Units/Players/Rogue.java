@@ -4,6 +4,8 @@ import Tiles.Board;
 import Tiles.Point;
 import Tiles.Units.HeroicUnit;
 
+import javax.swing.text.Position;
+
 public class Rogue extends Player implements HeroicUnit {
 
     private Integer cost;
@@ -23,7 +25,7 @@ public class Rogue extends Player implements HeroicUnit {
     }
 
     @Override
-    public void GameTick() {
+    public void GameTick(Player p) {
         currentEnergy = Math.min(currentEnergy+10,100);
     }
 

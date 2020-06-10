@@ -2,6 +2,9 @@ package Tiles.Units;
 
 import Tiles.Point;
 import Tiles.Tile;
+import Tiles.Units.Players.Player;
+
+import javax.swing.text.Position;
 
 public abstract class Unit extends Tile {
     protected String name;
@@ -21,15 +24,15 @@ public abstract class Unit extends Tile {
         return (int)(Math.random()*attackPoints);
     }
 
-    public void getAttacked(Integer damage)
+    public void Attack(Integer damage)
     {
-        int reduction = damage - ((int)(Math.random()*defencePoints));
+        int reduction = damage - Math.toIntExact(Math.round(Math.random()*defencePoints));
         if(damage>0){
-            health.Damage(damage);
+            health.AddAmount(-damage);
         }
     }
 
-    public abstract void GameTick();
+    public abstract void GameTick(Player p);
 
     //geters and seters
     public String getName() {
@@ -47,4 +50,6 @@ public abstract class Unit extends Tile {
     public Integer getDefencePoints() {
         return defencePoints;
     }
+
+
 }

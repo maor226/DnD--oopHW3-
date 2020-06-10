@@ -4,6 +4,8 @@ import Tiles.Board;
 import Tiles.Point;
 import Tiles.Units.Unit;
 
+import javax.swing.text.Position;
+
 public abstract class Player extends Unit {
     protected Integer experience=0;
     protected Integer level=1;
@@ -50,5 +52,4 @@ public abstract class Player extends Unit {
         return level;
     }
 
-    public abstract void GameTick();
 }

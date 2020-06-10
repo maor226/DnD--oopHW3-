@@ -4,6 +4,8 @@ import Tiles.Board;
 import Tiles.Point;
 import Tiles.Units.HeroicUnit;
 
+import javax.swing.text.Position;
+
 public class Hunter extends Player implements HeroicUnit {
 
     private Integer range;
@@ -24,7 +26,7 @@ public class Hunter extends Player implements HeroicUnit {
     }
 
     @Override
-    public void GameTick() {
+    public void GameTick(Player p) {
         if(ticksCount == 10)
         {
             arrowsCount += level;
@@ -40,6 +42,7 @@ public class Hunter extends Player implements HeroicUnit {
     public void CastAbility(Board board) {
         //TODO
     }
+
 
     //------------------getters-----------------------
 }

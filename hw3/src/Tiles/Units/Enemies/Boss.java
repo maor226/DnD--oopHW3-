@@ -3,6 +3,9 @@ package Tiles.Units.Enemies;
 import Tiles.Board;
 import Tiles.Point;
 import Tiles.Units.HeroicUnit;
+import Tiles.Units.Players.Player;
+
+import javax.swing.text.Position;
 
 public class Boss extends Monster implements HeroicUnit {
 
@@ -13,7 +16,7 @@ public class Boss extends Monster implements HeroicUnit {
     }
 
     @Override
-    public void GameTick() {
+    public void GameTick(Player p) {
         //todo
     }
 

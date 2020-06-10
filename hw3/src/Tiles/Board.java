@@ -7,22 +7,16 @@ import java.util.List;
 
 public class Board {
     private Tile[][] tiles;
-    private Player player;
-    private List<Enemy> enemies;
 
-    public Board(Tile[][] tiles,Player player,List<Enemy> enemies)
+    public Board(Tile[][] tiles)
     {
         this.tiles=tiles;
-        this.player =player;
-        this.enemies = enemies;
     }
 
-    public void GameTick() /**just a place saver**/
+    public void Switch(Tile t1,Tile t2)
     {
-        player.GameTick();
-        for (Enemy e : enemies)
-        {
-            e.GameTick();
-        }
+        tiles[t1.getPosition().getX()][t1.getPosition().getY()]=t2;
+        tiles[t2.getPosition().getX()][t2.getPosition().getY()]=t1;
     }
+
 }
