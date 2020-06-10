@@ -27,6 +27,5 @@ public class Trap extends Enemy {
         /**add attacking mechanism
          * check range then attack **/
 
-
     }
 }
