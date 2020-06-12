@@ -10,10 +10,8 @@ public abstract class Player extends Unit {
     protected Integer experience=0;
     protected Integer level=1;
 
-    public Player(Point position, String name, Integer healthPool, Integer healthAmount, Integer attackPoints, Integer defencePoints, Integer experience, Integer level) {
-        super('@', position, name, healthPool, healthAmount, attackPoints, defencePoints);
-        this.experience = experience;
-        this.level = level;
+    public Player(Point position, String name, Integer healthPool, Integer attackPoints, Integer defencePoints) {
+        super('@', position, name, healthPool, attackPoints, defencePoints);
     }
 
     public void LevelUp(){

@@ -20,9 +20,9 @@ public class GameManager {
     {
         for (Enemy e :enemies)
             if (e.getPosition().Range(player.getPosition())<e.getVisionRange())
-                e.GameTick(player);
+                e.GameTick(player,board);
             else
-                e.GameTick(null);
+                e.GameTick(null,board);
             if(player.getHealth().isZero())
             {
                 //todo
@@ -52,5 +52,4 @@ public class GameManager {
                    "|Ygritte      |  220  |  30   |  2     |  6      |                                        |\n" +
                    "-------------------------------------------------------------------------------------------\n";
     }
-
 }
