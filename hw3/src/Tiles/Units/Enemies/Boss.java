@@ -16,7 +16,7 @@ public class Boss extends Monster implements HeroicUnit {
     }
 
     @Override
-    public void GameTick(Player p) {
+    public void GameTick(Player p, Board board) {
         //todo
     }
 

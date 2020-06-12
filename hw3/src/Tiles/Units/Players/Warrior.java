@@ -11,8 +11,8 @@ public class Warrior extends Player implements HeroicUnit
     private Integer AbilityCooldown;
     private Integer RemainingCooldown;
 
-    public Warrior(Point position, String name, Integer healthPool, Integer healthAmount, Integer attackPoints, Integer defencePoints, Integer experience, Integer level, Integer abilitycooldown) {
-        super(position, name, healthPool, healthAmount, attackPoints, defencePoints, experience, level);
+    public Warrior(Point position, String name, Integer healthPool, Integer attackPoints, Integer defencePoints, Integer abilitycooldown) {
+        super(position, name, healthPool, attackPoints, defencePoints);
         AbilityCooldown = abilitycooldown;
         RemainingCooldown = 0;
     }
@@ -27,7 +27,7 @@ public class Warrior extends Player implements HeroicUnit
     }
 
     @Override
-    public void GameTick(Player p) {
+    public void GameTick(Player p,Board board) {
         RemainingCooldown--;
     }
 

@@ -12,8 +12,8 @@ public class Hunter extends Player implements HeroicUnit {
     private Integer arrowsCount;
     private Integer ticksCount;
 
-    public Hunter(Point position, String name, Integer healthPool, Integer healthAmount, Integer attackPoints, Integer defencePoints, Integer experience, Integer level, Integer range) {
-        super(position, name, healthPool, healthAmount, attackPoints, defencePoints, experience, level);
+    public Hunter(Point position, String name, Integer healthPool, Integer attackPoints, Integer defencePoints, Integer range) {
+        super(position, name, healthPool, attackPoints, defencePoints);
         this.range = range;
         ticksCount=0;
     }
@@ -26,7 +26,7 @@ public class Hunter extends Player implements HeroicUnit {
     }
 
     @Override
-    public void GameTick(Player p) {
+    public void GameTick(Player p,Board board) {
         if(ticksCount == 10)
         {
             arrowsCount += level;

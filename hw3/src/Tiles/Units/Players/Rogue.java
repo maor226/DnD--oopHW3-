@@ -11,8 +11,8 @@ public class Rogue extends Player implements HeroicUnit {
     private Integer cost;
     private Integer currentEnergy;
 
-    public Rogue(Point position, String name, Integer healthPool, Integer healthAmount, Integer attackPoints, Integer defencePoints, Integer experience, Integer level, Integer cost) {
-        super(position, name, healthPool, healthAmount, attackPoints, defencePoints, experience, level);
+    public Rogue(Point position, String name, Integer healthPool, Integer attackPoints, Integer defencePoints, Integer cost) {
+        super(position, name, healthPool, attackPoints, defencePoints);
         this.cost = cost;
         currentEnergy = 100;
     }
@@ -25,7 +25,7 @@ public class Rogue extends Player implements HeroicUnit {
     }
 
     @Override
-    public void GameTick(Player p) {
+    public void GameTick(Player p,Board board) {
         currentEnergy = Math.min(currentEnergy+10,100);
     }
 

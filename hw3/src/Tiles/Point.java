@@ -40,19 +40,4 @@ public class Point {
                 + Math.pow(y - p.y, 2))));
         return res;
     }
-
-    public void moveRandom() {
-        int x = Math.toIntExact(Math.round(Math.random()*4));
-        switch (x)
-        {
-            case 0: MoveUp(1);
-                break;
-            case 1: MoveDown(1);
-                break;
-            case 2:MoveRight(1);
-                break;
-            case 3:MoveLeft(1);
-                break;
-        }
-    }
 }
