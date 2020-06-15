@@ -2,6 +2,7 @@ package Tiles.Units.Players;
 
 import Tiles.Board;
 import Tiles.Point;
+import Tiles.Units.Enemies.Enemy;
 import Tiles.Units.Unit;
 
 import javax.swing.text.Position;
@@ -21,19 +22,7 @@ public abstract class Player extends Unit {
         health.setAmount(health.getPool());
         attackPoints+=4*level;
         defencePoints+=level;
-    }
-    public enum Direction{
-        left('a'),
-        right('d'),
-        up('w'),
-        down('s'),
-        NONE('q');
-
-        Direction(char a) {
-        }
-    }
-    public void MovePlayer(Board board,Direction d){
-        //todo
+        NotifyObserver(getName() + " Leveled up! up to level "+ level +" now! congratulation!");
     }
 
     @Override
@@ -41,13 +30,29 @@ public abstract class Player extends Unit {
         System.out.print("\033[0;32m"+tile+"\033[0m");;
     }
 
-    //geters and seters
+    /**----------------------getters and setters-----------------------------**/
     public Integer getExperience() {
         return experience;
     }
 
     public Integer getLevel() {
         return level;
+    }
+
+    public boolean accept(Unit u)
+    {
+        return u.accept(this);
+    }
+
+    public boolean accept(Enemy e)
+    {
+        Attack(e);
+        return false;
+    }
+
+    public void Attack(Enemy e)
+    {
+        //todo
     }
 
 }

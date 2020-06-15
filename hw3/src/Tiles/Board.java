@@ -14,6 +14,18 @@ public class Board {
         this.tiles=tiles;
     }
 
+    public Tile GetTileDirection(Point p, Character c) {
+        switch(c)
+        {
+            case 'w': return tiles[p.getX()][p.getY()+1];
+            case 'a': return tiles[p.getX()-1][p.getY()];
+            case 's': return tiles[p.getX()][p.getY()-1];
+            case 'd': return tiles[p.getX()+1][p.getY()];
+            case 'q': return null;
+        }
+        return null;
+    }
+
     public void Switch(Tile t1,Tile t2) /**switches between to tiles**/
     {
         tiles[t1.getPosition().getX()][t1.getPosition().getY()]=t2;
@@ -31,4 +43,23 @@ public class Board {
         return true;
     }
 
+    public void DeadUnit(Point p)
+    {
+        tiles[p.getX()][p.getY()] = new Empty(new Point(p.getX(),p.getY()));
+    }
+
+    public void DeadPlayer(Point p) {
+        tiles[p.getX()][p.getY()].setTile('X');
+    }
+
+    public enum Direction{
+        left('a'),
+        right('d'),
+        up('w'),
+        down('s'),
+        NONE('q');
+
+        Direction(char a) {
+        }
+    }
 }

@@ -3,6 +3,7 @@ package Tiles.Units.Enemies;
 import Tiles.Board;
 import Tiles.Point;
 import Tiles.Tile;
+import Tiles.Units.Players.Player;
 import Tiles.Units.Unit;
 
 import javax.swing.text.Position;
@@ -76,5 +77,4 @@ public abstract class Enemy extends Unit {
                 }
             }
     }
-
 }

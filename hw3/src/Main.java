@@ -1,6 +1,8 @@
 import Tiles.Board;
+import Tiles.Tile;
 import Tiles.Units.Observer;
 import Tiles.Units.Players.*;
+import Tiles.Units.Unit;
 import com.sun.deploy.security.SelectableSecurityManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -24,7 +26,6 @@ public class Main
 
         /**setting up the observer the tiles and the player**/
         Observer o = message -> System.out.println(message);
-        int[][] tiles = new int[10][10];
         Player p=null;
         switch (x)
         {
@@ -44,23 +45,28 @@ public class Main
                 break;
         }
         p.setObserver(o);
-
+        int i=0,j=0;
         /**getting the board data and setting up position for enemies and the player**/
         try {
             List<String> levels = Files.list(Paths.get(args[0])).sorted().map(Path::toString).collect(Collectors.toList());
+            Tile[][] tiles = new Tile[levels.size()][levels.get(0).length()];
             for (String levelPath : levels)
             {
                 List<String> levelData = Files.readAllLines(Paths.get(levelPath));
                 for (String s : levelData)
                 {
-                   /** add board getting the data**/
+                    //todo add a character decipher part
+                   j++;
                 }
                 System.out.println();
+                i++;
+                j=0;
             }
         }
         catch (IOException e) {
             e.printStackTrace();
         }
+        //todo create a board with tiles in it and then create and instance of game manager
     }
 
 }
