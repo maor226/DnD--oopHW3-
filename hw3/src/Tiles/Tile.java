@@ -1,5 +1,7 @@
 package Tiles;
 
+import Tiles.Units.Unit;
+
 public abstract class Tile {
     protected Character tile;
     protected Point position;
@@ -18,4 +20,11 @@ public abstract class Tile {
     }
 
     public void setPosition(Point position){this.position=position;}
+
+    public void setTile(Character tile)
+    {
+        this.tile=tile;
+    }
+
+    public abstract boolean accept(Unit u);
 }

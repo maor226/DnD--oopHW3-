@@ -16,17 +16,35 @@ public class GameManager {
         this.board = board;
     }
 
-    public void GameTick()
+    public void GameTick(Character c)
     {
+        boolean movable=false;
+        switch(c)
+        {
+            case 'w': movable = board.possibleMove(player.getPosition().getX(),player.getPosition().getY()+1);
+                break;
+            case 'a': movable = board.possibleMove(player.getPosition().getX()-1,player.getPosition().getY());
+                break;
+            case 's': movable = board.possibleMove(player.getPosition().getX(),player.getPosition().getY()-1);
+                break;
+            case 'd': movable = board.possibleMove(player.getPosition().getX()+1,player.getPosition().getY());
+                break;
+            case 'q': movable = false;
+        }
+        if (movable) {
+            player.Interact(board.GetTileDirection(player.getPosition(), c));
+        }
         for (Enemy e :enemies)
-            if (e.getPosition().Range(player.getPosition())<e.getVisionRange())
+            if(e.getHealth().isZero()) {
+                enemies.remove(e);
+                board.DeadUnit(e.getPosition());
+            }
+            else if (e.getPosition().Range(player.getPosition())<e.getVisionRange())
                 e.GameTick(player,board);
             else
                 e.GameTick(null,board);
             if(player.getHealth().isZero())
-            {
-                //todo
-            }
+                board.DeadPlayer(player.getPosition());
     }
 
     public static String Description()

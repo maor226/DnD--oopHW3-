@@ -2,7 +2,9 @@ package Tiles.Units.Enemies;
 
 import Tiles.Board;
 import Tiles.Point;
+import Tiles.Tile;
 import Tiles.Units.Players.Player;
+import Tiles.Units.Unit;
 
 public class Monster extends Enemy {
     protected Integer visionRange;
@@ -48,8 +50,30 @@ public class Monster extends Enemy {
         move(board,direction);
     }
 
+    public void AttackPlayer(Player p)
+    {
+        //todo
+    }
+
     @Override
     public int getVisionRange() {
         return visionRange;
     }
+
+     public boolean accept(Unit u)
+     {
+         return u.accept(this);
+     }
+     public boolean accept(Player p)
+     {
+         AttackPlayer(p);
+         return false;
+     }
+     public boolean accept(Enemy e)
+     {
+         return false;
+     }
+
+
+
 }

@@ -4,8 +4,6 @@ import Tiles.Point;
 import Tiles.Tile;
 import Tiles.Units.Players.Player;
 
-import javax.swing.text.Position;
-
 public abstract class Unit extends Tile implements Observable {
     protected String name;
     protected PoolInteger health;
@@ -46,10 +44,8 @@ public abstract class Unit extends Tile implements Observable {
         return defencePoints;
     }
 
-    public boolean Interact(Tile t)
-    {
-        //todo
-        return false;
+    public boolean Interact(Tile t) {
+        return t.accept(this);
     }
 
     /**---------------------observer pattern section------------------------------------**/

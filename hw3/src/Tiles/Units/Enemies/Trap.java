@@ -3,6 +3,7 @@ package Tiles.Units.Enemies;
 import Tiles.Board;
 import Tiles.Point;
 import Tiles.Units.Players.Player;
+import Tiles.Units.Unit;
 
 public class Trap extends Enemy {
     private Integer visibilityTime;
@@ -52,4 +53,18 @@ public class Trap extends Enemy {
     public int getVisionRange() {
         return 0;
     }
+
+    public boolean accept(Unit u)
+    {
+        return u.accept(this);
+    }
+    public boolean accept(Player p)
+    {
+        return false;
+    }
+    public boolean accept(Enemy e)
+    {
+        return false;
+    }
+
 }
