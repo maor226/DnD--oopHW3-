@@ -9,13 +9,18 @@ public abstract class Tile {
         this.position = position;
     }
 
-   public void Print(){
+  /* public void Print(){
        System.out.print(tile);
-   }
+   }*/
 
     public Integer Range(Tile t){
         Integer res = Math.toIntExact(Math.round(Math.sqrt(Math.pow(position.x - t.position.x, 2)
                 + Math.pow(position.y - t.position.y, 2))));
         return res;
     }
+
+    public Character getTile() {
+        return new Character(tile);
+    }
+
 }

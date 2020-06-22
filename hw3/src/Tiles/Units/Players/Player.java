@@ -24,15 +24,16 @@ public abstract class Player extends Unit {
         defencePoints+=level;
     }
 
-    @Override
-    public void Print(){
-        System.out.print("\033[0;32m"+tile+"\033[0m");;
-    }
+    /* @Override
+     public void Print(){
+         System.out.print("\033[0;32m"+tile+"\033[0m");
+     }*/
 
-    //geters and seters
     public Integer getExperience() {
         return experience;
     }
+
+    //geters and seters
 
     public Integer getLevel() {
         return level;

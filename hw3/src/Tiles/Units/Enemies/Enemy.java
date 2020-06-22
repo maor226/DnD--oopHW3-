@@ -11,10 +11,10 @@ public abstract class Enemy extends Unit {
         this.experienceValue = experienceValue;
     }
 
-    @Override
+   /* @Override
     public void Print() {
         System.out.print("\033[0;31m"+tile+"\033[0m");
-    }
+    }*/
 
     //getters and seters
     public Integer getExperienceValue() {
