@@ -56,15 +56,8 @@ public class Trap extends Enemy {
 
     public boolean accept(Unit u)
     {
-        return u.accept(this);
-    }
-    public boolean accept(Player p)
-    {
         return false;
     }
-    public boolean accept(Enemy e)
-    {
-        return false;
-    }
+
 
 }
