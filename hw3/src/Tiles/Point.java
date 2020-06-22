@@ -10,19 +10,19 @@ public class Point {
     }
 
     public void MoveUp(Integer step) {
-        y += step;
-    }
-
-    public void MoveDown(Integer step) {
-        y -= step;
-    }
-
-    public void MoveRight(Integer step) {
         x += step;
     }
 
-    public void MoveLeft(Integer step) {
+    public void MoveDown(Integer step) {
         x -= step;
+    }
+
+    public void MoveRight(Integer step) {
+        y += step;
+    }
+
+    public void MoveLeft(Integer step) {
+        y -= step;
     }
 
 

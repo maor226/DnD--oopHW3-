@@ -50,8 +50,7 @@ public class Monster extends Enemy {
         move(board,direction);
     }
 
-    public void AttackPlayer(Player p)
-    {
+    public void AttackPlayer(Player p){
         //todo
     }
 
@@ -64,8 +63,7 @@ public class Monster extends Enemy {
      {
          return u.accept(this);
      }
-     public boolean accept(Player p)
-     {
+     public boolean accept(Player p){
          AttackPlayer(p);
          return false;
      }
