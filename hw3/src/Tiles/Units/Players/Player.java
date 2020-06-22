@@ -3,11 +3,12 @@ package Tiles.Units.Players;
 import Tiles.Board;
 import Tiles.Point;
 import Tiles.Units.Enemies.Enemy;
+import Tiles.Units.HeroicUnit;
 import Tiles.Units.Unit;
 
 import javax.swing.text.Position;
 
-public abstract class Player extends Unit {
+public abstract class Player extends Unit implements HeroicUnit {
     protected Integer experience=0;
     protected Integer level=1;
 
@@ -52,7 +53,13 @@ public abstract class Player extends Unit {
 
     public void Attack(Enemy e)
     {
-        //todo
+        e.Hit(rollAttack()-e.rollDefence());
     }
 
+     public abstract void GameTick();
+
+    public void Hit(Integer attack) {
+        int hit=rollDefence()-attack;
+        if(hit<0)health.ChangeAmount(hit);
+    }
 }

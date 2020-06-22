@@ -6,8 +6,6 @@ import Tiles.Tile;
 import Tiles.Units.Players.Player;
 import Tiles.Units.Unit;
 
-import javax.swing.text.Position;
-
 public abstract class Enemy extends Unit {
     protected Integer experienceValue;
 
@@ -16,6 +14,7 @@ public abstract class Enemy extends Unit {
         super(tile, position, name, healthPool, attackPoints, defencePoints);
         this.experienceValue = experienceValue;
     }
+    public abstract void GameTick(Player p, Board board);
 
     @Override
     public void Print() {
@@ -76,5 +75,9 @@ public abstract class Enemy extends Unit {
                     }
                 }
             }
+    }
+
+    public void Hit(int i) {
+        health.ChangeAmount(-i);
     }
 }

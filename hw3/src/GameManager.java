@@ -5,14 +5,10 @@ import Tiles.Units.Players.Player;
 import java.util.List;
 
 public class GameManager {
-    private Player player;
-    private List<Enemy> enemies;
     private Board board;
 
-    public GameManager(List<Enemy> enemies, Player player, Board board)
+    public GameManager(  Board board)
     {
-        this.player = player;
-        this.enemies = enemies;
         this.board = board;
     }
 
@@ -21,30 +17,34 @@ public class GameManager {
         boolean movable=false;
         switch(c)
         {
-            case 'w': movable = board.possibleMove(player.getPosition().getX(),player.getPosition().getY()+1);
+            case 'd': movable = board.possibleMove(board.getPlayer().getPosition().getX(),board.getPlayer().getPosition().getY()+1);
                 break;
-            case 'a': movable = board.possibleMove(player.getPosition().getX()-1,player.getPosition().getY());
+            case 's': movable = board.possibleMove(board.getPlayer().getPosition().getX()-1,board.getPlayer().getPosition().getY());
                 break;
-            case 's': movable = board.possibleMove(player.getPosition().getX(),player.getPosition().getY()-1);
+            case 'a': movable = board.possibleMove(board.getPlayer().getPosition().getX(),board.getPlayer().getPosition().getY()-1);
                 break;
-            case 'd': movable = board.possibleMove(player.getPosition().getX()+1,player.getPosition().getY());
+            case 'w': movable = board.possibleMove(board.getPlayer().getPosition().getX()+1,board.getPlayer().getPosition().getY());
                 break;
             case 'q': movable = false;
+            break;
+            case 'e': board.getPlayer().CastAbility(board);
+            break;
         }
         if (movable) {
-            player.Interact(board.GetTileDirection(player.getPosition(), c));
+            board.getPlayer().Interact(board.GetTileDirection(board.getPlayer().getPosition(), c));
         }
-        for (Enemy e :enemies)
+        board.getPlayer().GameTick();
+        for (Enemy e :board.getEnemies())
             if(e.getHealth().isZero()) {
-                enemies.remove(e);
+                board.getEnemies().remove(e);
                 board.DeadUnit(e.getPosition());
             }
-            else if (e.getPosition().Range(player.getPosition())<e.getVisionRange())
-                e.GameTick(player,board);
+            else if (e.getPosition().Range(board.getPlayer().getPosition())<e.getVisionRange())
+                e.GameTick(board.getPlayer(),board);
             else
                 e.GameTick(null,board);
-            if(player.getHealth().isZero())
-                board.DeadPlayer(player.getPosition());
+            if(board.getPlayer().getHealth().isZero())
+                board.DeadPlayer(board.getPlayer().getPosition());
     }
 
     public static String Description()

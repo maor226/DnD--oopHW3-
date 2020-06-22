@@ -2,7 +2,6 @@ package Tiles.Units.Enemies;
 
 import Tiles.Board;
 import Tiles.Point;
-import Tiles.Tile;
 import Tiles.Units.Players.Player;
 import Tiles.Units.Unit;
 
@@ -51,7 +50,7 @@ public class Monster extends Enemy {
     }
 
     public void AttackPlayer(Player p){
-        //todo
+        p.Hit(rollAttack());
     }
 
     @Override

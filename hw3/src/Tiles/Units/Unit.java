@@ -25,7 +25,7 @@ public abstract class Unit extends Tile implements Observable {
 
     public Integer rollDefence() { return (int)(Math.random()*defencePoints);}
 
-    public abstract void GameTick(Player p, Board board);
+
 
     //geters and seters
     public String getName() {

@@ -5,8 +5,6 @@ import Tiles.Point;
 import Tiles.Units.HeroicUnit;
 import Tiles.Units.Players.Player;
 
-import javax.swing.text.Position;
-
 public class Boss extends Monster implements HeroicUnit {
 
     Integer combatTicks=0;
@@ -21,7 +19,15 @@ public class Boss extends Monster implements HeroicUnit {
     }
 
     @Override
-    public void CastAbility(Board board) {
-        //todo
+    public boolean CastAbility(Board board) {
+        Player player=board.getPlayer();
+        if(player.getPosition().Range(position)<visionRange){
+            player.Hit(attackPoints);
+            return true;
+        }
+        else
+            return false;
     }
+
+
 }

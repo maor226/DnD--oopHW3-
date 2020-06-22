@@ -2,15 +2,18 @@ package Tiles.Units.Players;
 
 import Tiles.Board;
 import Tiles.Point;
+import Tiles.Units.Enemies.Enemy;
 import Tiles.Units.HeroicUnit;
 
 import javax.swing.text.Position;
+import java.util.List;
 
 public class Hunter extends Player implements HeroicUnit {
 
     private Integer range;
     private Integer arrowsCount;
     private Integer ticksCount;
+    private boolean IsAttackkPointsAttack=false;
 
     public Hunter(Point position, String name, Integer healthPool, Integer attackPoints, Integer defencePoints, Integer range) {
         super(position, name, healthPool, attackPoints, defencePoints);
@@ -26,7 +29,7 @@ public class Hunter extends Player implements HeroicUnit {
     }
 
     @Override
-    public void GameTick(Player p,Board board) {
+    public void GameTick() {
         if(ticksCount == 10)
         {
             arrowsCount += level;
@@ -39,10 +42,31 @@ public class Hunter extends Player implements HeroicUnit {
     }
 
     @Override
-    public void CastAbility(Board board) {
-        //TODO
+    public boolean CastAbility(Board board) {
+       if(arrowsCount==0) NotifyObserver("Can not Cast an ability at the moment\nyou have 0 arrows\r you can cast in:\t"+(10-ticksCount));
+       else{
+           List<Enemy> enemies =board.getEnemies(position,range);
+           if(enemies.size()==0)
+               NotifyObserver("Can not Cast an ability at the moment\nyou have no enemies in range "+(range));
+           else{
+               Enemy closest=enemies.get(0);
+               for (Enemy e:enemies) {
+                   if(position.Range(e.getPosition())<position.Range(closest.getPosition()))
+                       closest=e;
+               }
+               IsAttackkPointsAttack=true;
+               Attack(closest);
+               IsAttackkPointsAttack=false;
+               return true;
+           }
+       }
+       return  false;
     }
 
+    @Override
+    public void Attack(Enemy e) {
+        e.Hit((IsAttackkPointsAttack? attackPoints:rollAttack())-e.rollDefence());
+    }
 
     //------------------getters-----------------------
 }

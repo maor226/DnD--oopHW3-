@@ -4,23 +4,27 @@ import Tiles.Units.Enemies.Enemy;
 import Tiles.Units.Players.Player;
 import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
     private Tile[][] tiles;
+    private List<Enemy> enemies;
+    private Player player;
 
-    public Board(Tile[][] tiles)
-    {
-        this.tiles=tiles;
+    public Board(Tile[][] tiles, List<Enemy> enemies, Player player) {
+        this.tiles = tiles;
+        this.enemies = enemies;
+        this.player = player;
     }
 
     public Tile GetTileDirection(Point p, Character c) {
         switch(c)
         {
-            case 'w': return tiles[p.getX()][p.getY()+1];
-            case 'a': return tiles[p.getX()-1][p.getY()];
-            case 's': return tiles[p.getX()][p.getY()-1];
-            case 'd': return tiles[p.getX()+1][p.getY()];
+            case 'd': return tiles[p.getX()][p.getY()+1];
+            case 's': return tiles[p.getX()-1][p.getY()];
+            case 'a': return tiles[p.getX()][p.getY()-1];
+            case 'w': return tiles[p.getX()+1][p.getY()];
             case 'q': return null;
         }
         return null;
@@ -52,6 +56,18 @@ public class Board {
         tiles[p.getX()][p.getY()].setTile('X');
     }
 
+    public List<Enemy> getEnemies(Point p,int range) {
+        List<Enemy> l=new ArrayList<Enemy>();
+        for (Enemy e:enemies)
+            if(p.Range(e.getPosition())<range)
+                l.add(e);
+        return  l;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
     public enum Direction{
         left('a'),
         right('d'),
@@ -59,7 +75,12 @@ public class Board {
         down('s'),
         NONE('q');
 
-        Direction(char a) {
+        Direction(char c) {
         }
+    }
+
+
+    public List<Enemy> getEnemies() {
+        return enemies;
     }
 }
