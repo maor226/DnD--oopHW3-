@@ -1,8 +1,8 @@
 package Tiles;
 
 public class Point {
-    Integer x;
-    Integer y;
+    private Integer x;
+    private Integer y;
 
     public Point(Integer x, Integer y) {
         this.x = x;

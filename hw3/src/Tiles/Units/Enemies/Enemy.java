@@ -31,7 +31,7 @@ public abstract class Enemy extends Unit {
 
     public void move(Board board, String direction) {
             boolean moveable;
-            if (direction == "right") {
+            if (direction.equals("right")) {
                 if (board.possibleMove(position.getX() + 1, position.getY())) { /**not out of bounds**/
                     Tile move = board.getTiles()[position.getX() + 1][position.getY()]; /**gets the tile to interact to**/
                     moveable = Interact(move); /**interaction brings if you can move there or not(empty,wall,player,another unit and so...)**/
@@ -41,7 +41,7 @@ public abstract class Enemy extends Unit {
                         board.Switch(this, move);/**switch their places in the board**/
                     }
                 }
-            } else if (direction == "left") {
+            } else if (direction.equals("left")) {
                 if (board.possibleMove(position.getX() - 1, position.getY())) {
                     Tile move = board.getTiles()[position.getX() - 1][position.getY()];
                     moveable = Interact(move);
@@ -51,7 +51,7 @@ public abstract class Enemy extends Unit {
                         board.Switch(this, move);
                     }
                 }
-            } else if (direction == "up")
+            } else if (direction.equals("up"))
             {
                 if (board.possibleMove(position.getX(), position.getY() + 1)) {
                     Tile move = board.getTiles()[position.getX()][position.getY() + 1];
