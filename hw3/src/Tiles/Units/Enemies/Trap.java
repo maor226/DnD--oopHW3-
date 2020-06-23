@@ -1,6 +1,7 @@
 package Tiles.Units.Enemies;
 
 import Tiles.Board;
+import Tiles.Empty;
 import Tiles.Point;
 import Tiles.Units.Players.Player;
 import Tiles.Units.Unit;
@@ -11,8 +12,7 @@ public class Trap extends Enemy {
     private Integer ticksCount;
     private boolean visible;
 
-    public Trap(Integer visibilitytime, Integer invisibilitytime, Character tile, Point position, String name, Integer healthPool, Integer healthAmount, Integer attackPoints, Integer defencePoints, Integer experienceValue)
-    {
+    public Trap(Integer visibilitytime, Integer invisibilitytime, Character tile, Point position, String name, Integer healthPool, Integer healthAmount, Integer attackPoints, Integer defencePoints, Integer experienceValue) {
         super(tile,position,name,healthPool,healthAmount,attackPoints,defencePoints,experienceValue);
         visibilityTime=visibilitytime;
         invisibilityTime=invisibilitytime;
@@ -59,5 +59,9 @@ public class Trap extends Enemy {
         return false;
     }
 
-
+    @Override
+    public Character getTile(){
+        if(visible)return super.getTile();
+        else return Empty.EmptyTile;
+    }
 }

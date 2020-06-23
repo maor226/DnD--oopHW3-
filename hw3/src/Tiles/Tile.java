@@ -12,7 +12,7 @@ public abstract class Tile {
     }
 
    public void Print(){
-       System.out.print(tile);
+       System.out.print(getTile());
    }
 
     public Point getPosition() {
@@ -27,4 +27,8 @@ public abstract class Tile {
     }
 
     public abstract boolean accept(Unit u);
+
+    public Character getTile() {
+        return tile;
+    }
 }

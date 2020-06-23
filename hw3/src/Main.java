@@ -17,6 +17,8 @@ import java.util.stream.Collectors;
 
 public class Main
 {
+
+
     public static void main(String[] args) {
         /**choosing character**/
         System.out.println("choose character from the following list, enter the number of the character");
@@ -68,5 +70,7 @@ public class Main
         }
         //todo create a board with tiles in it and then create and instance of game manager
     }
+
+
 
 }

@@ -7,7 +7,7 @@ import java.util.List;
 public class GameManager {
     private Board board;
 
-    public GameManager(  Board board)
+    public GameManager(Board board)
     {
         this.board = board;
     }
@@ -70,4 +70,7 @@ public class GameManager {
                    "|Ygritte      |  220  |  30   |  2     |  6      |                                        |\n" +
                    "-------------------------------------------------------------------------------------------\n";
     }
+
+
+
 }
