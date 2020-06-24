@@ -17,9 +17,10 @@ public class Mage extends Player implements HeroicUnit {
     Integer abilityRange;
     boolean IsSpellAttack=false;
 
-    public Mage(Point position, String name, Integer healthPool, Integer attackPoints, Integer defencePoints,Integer manapool, Integer manaCost, Integer spellPower, Integer hitsCount, Integer abilityRange) {
+    public Mage(Point position, String name, Integer healthPool, Integer attackPoints, Integer defencePoints
+            ,Integer manaPool, Integer manaCost, Integer spellPower, Integer hitsCount, Integer abilityRange) {
         super(position, name, healthPool, attackPoints, defencePoints);
-        mana=new PoolInteger(manapool,manapool/4);
+        mana=new PoolInteger(manaPool,manaPool/4);
         this.manaCost = manaCost;
         this.spellPower = spellPower;
         this.hitsCount = hitsCount;
@@ -41,7 +42,8 @@ public class Mage extends Player implements HeroicUnit {
     @Override
     public boolean CastAbility(Board board) {
         if(mana.getAmount()<manaCost)
-            NotifyObserver("Can not Cast an ability at the moment\nyou need more "+(manaCost-mana.getAmount())+" mana");
+            NotifyObserver("Can not Cast an ability at the moment" +
+                    "\n you need more "+(manaCost-mana.getAmount())+" mana");
         else{
             mana.ChangeAmount(-manaCost);
             List<Enemy> enemies =board.getEnemies(position,abilityRange);

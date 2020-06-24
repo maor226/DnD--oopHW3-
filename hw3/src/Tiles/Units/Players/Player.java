@@ -28,7 +28,7 @@ public abstract class Player extends Unit implements HeroicUnit {
 
     @Override
     public void Print(){
-        System.out.print("\033[0;32m"+tile+"\033[0m");;
+        System.out.print("\033[0;32m"+tile+"\033[0m");
     }
 
     /**----------------------getters and setters-----------------------------**/
@@ -62,4 +62,5 @@ public abstract class Player extends Unit implements HeroicUnit {
         int hit=rollDefence()-attack;
         if(hit<0)health.ChangeAmount(hit);
     }
+
 }

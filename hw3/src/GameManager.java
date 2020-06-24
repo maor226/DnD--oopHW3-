@@ -1,33 +1,34 @@
 import Tiles.Board;
 import Tiles.Units.Enemies.Enemy;
-import Tiles.Units.Players.Player;
 
-import java.util.List;
+import java.util.logging.Level;
 
 public class GameManager {
     private Board board;
+    private Board[] levels;
+    protected int level=0;
 
-    public GameManager(Board board)
+    public GameManager(Board[] levels)
     {
-        this.board = board;
+        this.board = levels[level];
+        this.levels=levels;
     }
 
-    public void GameTick(Character c)
-    {
+    public void GameTick(Character c){
         boolean movable=false;
-        switch(c)
+        switch( getDirection(c))
         {
-            case 'd': movable = board.possibleMove(board.getPlayer().getPosition().getX(),board.getPlayer().getPosition().getY()+1);
+            case Right: movable = board.possibleMove(board.getPlayer().getPosition().getX(),board.getPlayer().getPosition().getY()+1);
                 break;
-            case 's': movable = board.possibleMove(board.getPlayer().getPosition().getX()-1,board.getPlayer().getPosition().getY());
+            case Down: movable = board.possibleMove(board.getPlayer().getPosition().getX()-1,board.getPlayer().getPosition().getY());
                 break;
-            case 'a': movable = board.possibleMove(board.getPlayer().getPosition().getX(),board.getPlayer().getPosition().getY()-1);
+            case Left: movable = board.possibleMove(board.getPlayer().getPosition().getX(),board.getPlayer().getPosition().getY()-1);
                 break;
-            case 'w': movable = board.possibleMove(board.getPlayer().getPosition().getX()+1,board.getPlayer().getPosition().getY());
+            case Up: movable = board.possibleMove(board.getPlayer().getPosition().getX()+1,board.getPlayer().getPosition().getY());
                 break;
-            case 'q': movable = false;
+            case None: movable = false;
             break;
-            case 'e': board.getPlayer().CastAbility(board);
+            case Cast: board.getPlayer().CastAbility(board);
             break;
         }
         if (movable) {
@@ -45,6 +46,30 @@ public class GameManager {
                 e.GameTick(null,board);
             if(board.getPlayer().getHealth().isZero())
                 board.DeadPlayer(board.getPlayer().getPosition());
+    }
+    private static Direction getDirection(char c){
+        switch (c) {
+            case 's':
+                return Direction.Down;
+            case 'a':
+                return Direction.Left;
+            case 'w':
+                return Direction.Up;
+            case 'd':
+                return Direction.Right;
+            case 'e':
+                return Direction.Cast;
+            case 'q':
+                return Direction.None;
+        }
+        return null;
+    }
+    public void NextLevel(){
+        if(HasNextLevel())
+        board=levels[++level];
+    }
+    public boolean HasNextLevel(){
+        return levels.length>1+level;
     }
 
     public static String Description()
