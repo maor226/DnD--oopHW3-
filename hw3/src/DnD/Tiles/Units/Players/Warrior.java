@@ -41,7 +41,7 @@ public class Warrior extends Player implements HeroicUnit
     }
 
     @Override
-    public boolean CastAbility(Board board) {
+    public void CastAbility(Board board) {
         if(remainingCooldown>0)
             NotifyObserver("Can not Cast an ability at the moment\nyou can cast in:\t"+remainingCooldown);
         else{
@@ -50,10 +50,8 @@ public class Warrior extends Player implements HeroicUnit
             List<Enemy> enemies =board.getEnemies(position,3);
             if(enemies.size()>0){
                 enemies.get(Math.toIntExact(Math.round(Math.random() * enemies.size()))).Hit(health.getPool()/10);
-                return true;
             }
         }
-        return false;
     }
 
 

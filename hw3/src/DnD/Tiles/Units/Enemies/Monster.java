@@ -50,7 +50,7 @@ public class Monster extends Enemy {
     }
 
     public void AttackPlayer(Player p){
-        p.Hit(rollAttack());
+        p.Hit(rollAttack(),getName());
     }
 
     @Override

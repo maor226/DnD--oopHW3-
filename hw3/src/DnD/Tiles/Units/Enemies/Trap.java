@@ -30,21 +30,7 @@ public class Trap extends Enemy {
 
         if (position.Range(p.getPosition())<2)
         {
-            int defence = p.rollDefence();
-            int attack = rollAttack();
-            String s;
-            if(defence-attack<0)
-            {
-                p.getHealth().ChangeAmount(-(defence-attack));
-                s = "" + getName() + " attacked " +p.getName()+", "+p.getName()+" rolled: "+defence +" defence, and "+getName() + " rolled: "
-                            + attack + " attack. " +p.getName() + " lost " + (defence-attack) + " life points";
-            }
-            else
-            {
-                s = "" + getName() + " attacked " +p.getName()+", "+p.getName()+" rolled: "+defence +" defence, and "+getName() + " rolled: "
-                        + attack + " attack. " +p.getName() + " lost 0 life points";
-            }
-            NotifyObserver(s);
+           p.Hit(rollAttack(),getName());
         }
 
     }

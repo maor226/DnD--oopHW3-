@@ -40,7 +40,7 @@ public class Mage extends Player implements HeroicUnit {
     }
 
     @Override
-    public boolean CastAbility(Board board) {
+    public void CastAbility(Board board) {
         if(mana.getAmount()<manaCost)
             NotifyObserver("Can not Cast an ability at the moment" +
                     "\n you need more "+(manaCost-mana.getAmount())+" mana");
@@ -54,9 +54,7 @@ public class Mage extends Player implements HeroicUnit {
                 }
             }
             IsSpellAttack=false;
-            return true;
         }
-        return false;
     }
 
     @Override
