@@ -4,6 +4,7 @@ import DnD.Tiles.Units.Enemies.Boss;
 import DnD.Tiles.Units.Enemies.Enemy;
 import DnD.Tiles.Units.Enemies.Monster;
 import DnD.Tiles.Units.Enemies.Trap;
+import DnD.Tiles.Units.Observer;
 import DnD.Tiles.Units.Players.Player;
 
 import java.util.ArrayList;
@@ -15,32 +16,36 @@ import java.util.List;
         private Player player;
         private Point playerPos;
 
-        public Board(char[][] tiles, Player player) {
+        public Board(char[][] tiles, Player player,Observer o)
+        {
             this.enemies = new ArrayList<Enemy>() ;
             this.player = player;
             this.tiles = new Tile[tiles.length][tiles[0].length];
             for (int i = 0; i < tiles.length; i++) {
                 for (int j = 0; j < tiles[i].length; j++) {
-                    this.tiles[i][j]=ConvertCharToTiles(tiles[i][j],new Point(i,j));
+                    this.tiles[i][j]=ConvertCharToTiles(tiles[i][j],new Point(i,j),o);
                 }
             }
         }
-        public Board(char[][] tiles,Point playerPosition) {
+        public Board(char[][] tiles,Point playerPosition,Observer o) {
             this.enemies = new ArrayList<Enemy>() ;
             this.playerPos = playerPosition;
             this.tiles = new Tile[tiles.length][tiles[0].length];
             for (int i = 0; i < tiles.length; i++) {
                 for (int j = 0; j < tiles[i].length; j++) {
-                    this.tiles[i][j]=ConvertCharToTiles(tiles[i][j],new Point(i,j));
+                    this.tiles[i][j]=ConvertCharToTiles(tiles[i][j],new Point(i,j),o);
                 }
             }
         }
 
-        private Tile ConvertCharToTiles(char c,Point position) {
+        private Tile ConvertCharToTiles(char c,Point position,Observer observer) {
             Enemy e=null;
             switch(c){
                 case '@':
-                    player.setPosition(position);
+                    if(player!=null) {
+                        player.position = position;
+                        player.setObserver(observer);
+                    }
                     return player;
                 case '#':
                     return new Wall(position);
@@ -72,8 +77,10 @@ import java.util.List;
                 case 'D':e=new Trap(1,10,c,position,"Death Trap",500,500,100,20,250);
                     break;
             }
-            if(e!=null)
+            if(e!=null){
                 enemies.add(e);
+                e.setObserver(observer);
+            }
             return e;
         }
 

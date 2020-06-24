@@ -59,8 +59,9 @@ public class Main
                 List<String> levelData = Files.readAllLines(Paths.get(levelPath));
                 boards[i] = new char[levelData.size()][levelData.get(0).length()];
                 for (String s : levelData) {
-                    for (int k = 0; k < levelData.size(); k++)
+                    for (int k = 0; k < levelData.size(); k++) {
                         boards[i][j][k] = levelData.get(j).charAt(k);
+                    }
                     j++;
                 }
                 System.out.println();
@@ -74,10 +75,8 @@ public class Main
         if (boards != null) {
            levels=new Board[boards.length];
             for (i = 0; i < boards.length; i++)
-                levels[i]=i==0?new Board(boards[i], p):new Board(boards[i],p.getPosition());
+                levels[i]=i==0?new Board(boards[i], p,o):new Board(boards[i],p.getPosition(),o);
         }
         GameManager GM=new GameManager(levels);
-        //todo add the CLI<<LISINER>>
-        //todo Set An Obsetver<<SINGELTONE>> and Lisiner
     }
 }
