@@ -2,31 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72a48bf9-650f-4c78-afa1-5f53f5b03935" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/DnD/Tiles/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Direction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/GameManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Board.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Empty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Empty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Tile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Units/Enemies/Boss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Boss.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Units/Enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Units/Enemies/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Units/Enemies/Trap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Trap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Units/HeroicUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/HeroicUnit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Units/Observable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Observable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Units/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Observer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Units/Players/Hunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Hunter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Units/Players/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Mage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Units/Players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Units/Players/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Rogue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Units/Players/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Warrior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Units/PoolInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/PoolInteger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Units/Unit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Unit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tiles/Wall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Wall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +51,7 @@
       <recent name="C:\Users\ntur4\OneDrive\Desktop\semester bet\hw3\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Unit.Main" />
       <module name="hw3" />
@@ -94,7 +71,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>

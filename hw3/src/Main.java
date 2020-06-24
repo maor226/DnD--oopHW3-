@@ -1,5 +1,3 @@
-package DnD.Tiles;
-
 import DnD.Tiles.Board;
 import DnD.Tiles.GameManager;
 import DnD.Tiles.Units.Observer;
