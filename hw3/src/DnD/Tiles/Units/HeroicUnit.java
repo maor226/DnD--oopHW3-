@@ -1,6 +1,6 @@
-package Tiles.Units;
+package DnD.Tiles.Units;
 
-import Tiles.Board;
+import DnD.Tiles.Board;
 
 public interface HeroicUnit {
     boolean CastAbility(Board board);

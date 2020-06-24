@@ -1,14 +1,11 @@
-package Tiles.Units.Players;
+package DnD.Tiles.Units.Players;
 
-import Tiles.Board;
-import Tiles.Point;
-import Tiles.Units.Enemies.Enemy;
-import Tiles.Units.HeroicUnit;
-import org.w3c.dom.ranges.Range;
+import DnD.Tiles.Board;
+import DnD.Tiles.Point;
+import DnD.Tiles.Units.Enemies.Enemy;
+import DnD.Tiles.Units.HeroicUnit;
 
-import java.lang.reflect.Array;
 import java.util.List;
-import java.util.Set;
 
 public class Warrior extends Player implements HeroicUnit
 {

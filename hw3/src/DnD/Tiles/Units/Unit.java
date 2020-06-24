@@ -1,8 +1,6 @@
-package Tiles.Units;
-import Tiles.Board;
-import Tiles.Point;
-import Tiles.Tile;
-import Tiles.Units.Players.Player;
+package DnD.Tiles.Units;
+import DnD.Tiles.Point;
+import DnD.Tiles.Tile;
 
 public abstract class Unit extends Tile implements Observable {
     protected String name;

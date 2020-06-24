@@ -1,7 +1,6 @@
-import Tiles.Board;
-import Tiles.Units.Enemies.Enemy;
+package DnD.Tiles;
 
-import java.util.logging.Level;
+import DnD.Tiles.Board;
 
 public class GameManager {
     private Board board;
@@ -15,55 +14,10 @@ public class GameManager {
     }
 
     public void GameTick(Character c){
-        boolean movable=false;
-        switch( getDirection(c))
-        {
-            case Right: movable = board.possibleMove(board.getPlayer().getPosition().getX(),board.getPlayer().getPosition().getY()+1);
-                break;
-            case Down: movable = board.possibleMove(board.getPlayer().getPosition().getX()-1,board.getPlayer().getPosition().getY());
-                break;
-            case Left: movable = board.possibleMove(board.getPlayer().getPosition().getX(),board.getPlayer().getPosition().getY()-1);
-                break;
-            case Up: movable = board.possibleMove(board.getPlayer().getPosition().getX()+1,board.getPlayer().getPosition().getY());
-                break;
-            case None: movable = false;
-            break;
-            case Cast: board.getPlayer().CastAbility(board);
-            break;
-        }
-        if (movable) {
-            board.getPlayer().Interact(board.GetTileDirection(board.getPlayer().getPosition(), c));
-        }
-        board.getPlayer().GameTick();
-        for (Enemy e :board.getEnemies())
-            if(e.getHealth().isZero()) {
-                board.getEnemies().remove(e);
-                board.DeadUnit(e.getPosition());
-            }
-            else if (e.getPosition().Range(board.getPlayer().getPosition())<e.getVisionRange())
-                e.GameTick(board.getPlayer(),board);
-            else
-                e.GameTick(null,board);
-            if(board.getPlayer().getHealth().isZero())
-                board.DeadPlayer(board.getPlayer().getPosition());
+        board.PlayerTick(c);
+        board.EnemyTick();
     }
-    private static Direction getDirection(char c){
-        switch (c) {
-            case 's':
-                return Direction.Down;
-            case 'a':
-                return Direction.Left;
-            case 'w':
-                return Direction.Up;
-            case 'd':
-                return Direction.Right;
-            case 'e':
-                return Direction.Cast;
-            case 'q':
-                return Direction.None;
-        }
-        return null;
-    }
+
     public void NextLevel(){
         if(HasNextLevel())
         board=levels[++level];

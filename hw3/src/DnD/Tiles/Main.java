@@ -1,11 +1,9 @@
-import Tiles.Board;
-import Tiles.Tile;
-import Tiles.Units.Observer;
-import Tiles.Units.Players.*;
-import Tiles.Units.Unit;
-import com.sun.deploy.security.SelectableSecurityManager;
-import javafx.application.Application;
-import javafx.stage.Stage;
+package DnD.Tiles;
+
+import DnD.Tiles.Board;
+import DnD.Tiles.GameManager;
+import DnD.Tiles.Units.Observer;
+import DnD.Tiles.Units.Players.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -84,7 +82,4 @@ public class Main
         //todo add the CLI<<LISINER>>
         //todo Set An Obsetver<<SINGELTONE>> and Lisiner
     }
-
-
-
 }
