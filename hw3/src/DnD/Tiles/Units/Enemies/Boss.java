@@ -1,9 +1,9 @@
-package Tiles.Units.Enemies;
+package DnD.Tiles.Units.Enemies;
 
-import Tiles.Board;
-import Tiles.Point;
-import Tiles.Units.HeroicUnit;
-import Tiles.Units.Players.Player;
+import DnD.Tiles.Board;
+import DnD.Tiles.Point;
+import DnD.Tiles.Units.HeroicUnit;
+import DnD.Tiles.Units.Players.Player;
 
 public class Boss extends Monster implements HeroicUnit {
 

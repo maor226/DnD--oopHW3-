@@ -1,4 +1,4 @@
-package Tiles.Units;
+package DnD.Tiles.Units;
 
 public class PoolInteger {
     Integer pool;

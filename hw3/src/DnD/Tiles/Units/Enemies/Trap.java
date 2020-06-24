@@ -1,10 +1,10 @@
-package Tiles.Units.Enemies;
+package DnD.Tiles.Units.Enemies;
 
-import Tiles.Board;
-import Tiles.Empty;
-import Tiles.Point;
-import Tiles.Units.Players.Player;
-import Tiles.Units.Unit;
+import DnD.Tiles.Board;
+import DnD.Tiles.Empty;
+import DnD.Tiles.Point;
+import DnD.Tiles.Units.Players.Player;
+import DnD.Tiles.Units.Unit;
 
 public class Trap extends Enemy {
     private Integer visibilityTime;

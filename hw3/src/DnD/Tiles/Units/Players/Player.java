@@ -1,12 +1,9 @@
-package Tiles.Units.Players;
+package DnD.Tiles.Units.Players;
 
-import Tiles.Board;
-import Tiles.Point;
-import Tiles.Units.Enemies.Enemy;
-import Tiles.Units.HeroicUnit;
-import Tiles.Units.Unit;
-
-import javax.swing.text.Position;
+import DnD.Tiles.Point;
+import DnD.Tiles.Units.Enemies.Enemy;
+import DnD.Tiles.Units.HeroicUnit;
+import DnD.Tiles.Units.Unit;
 
 public abstract class Player extends Unit implements HeroicUnit {
     protected Integer experience=0;
@@ -52,7 +49,10 @@ public abstract class Player extends Unit implements HeroicUnit {
 
     public void Attack(Enemy e)
     {
-        e.Hit(rollAttack()-e.rollDefence());
+        int attack = rollAttack();
+        int defence = e.rollDefence();
+        e.Hit(attack-defence);
+        NotifyObserver(getName() +" attacked " + e.getName() +" rolled attack: + "+attack+" and enemy rolled defence " + defence + " and you hit the enemy for " + (attack-defence));
     }
 
      public abstract void GameTick();
@@ -60,6 +60,17 @@ public abstract class Player extends Unit implements HeroicUnit {
     public void Hit(Integer attack) {
         int hit=rollDefence()-attack;
         if(hit<0)health.ChangeAmount(hit);
+    }
+
+    public void gainExprerience(int exp)
+    {
+        if(experience + exp >= 50*level)
+        {
+            exp = exp - (50*level-experience);
+            LevelUp();
+            gainExprerience(exp);
+        }
+        experience+=exp;
     }
 
 }
