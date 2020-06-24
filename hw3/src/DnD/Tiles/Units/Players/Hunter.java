@@ -41,7 +41,7 @@ public class Hunter extends Player implements HeroicUnit {
     }
 
     @Override
-    public boolean CastAbility(Board board) {
+    public void CastAbility(Board board) {
        if(arrowsCount==0) NotifyObserver("Can not Cast an ability at the moment\nyou have 0 arrows\r you can cast in:\t"+(10-ticksCount));
        else{
            List<Enemy> enemies =board.getEnemies(position,range);
@@ -56,10 +56,8 @@ public class Hunter extends Player implements HeroicUnit {
                IsAttackkPointsAttack=true;
                Attack(closest);
                IsAttackkPointsAttack=false;
-               return true;
            }
        }
-       return  false;
     }
 
     @Override

@@ -32,7 +32,7 @@ public class Rogue extends Player implements HeroicUnit {
     }
 
     @Override
-    public boolean CastAbility(Board board) {
+    public void CastAbility(Board board) {
         if(currentEnergy<cost)
             NotifyObserver("Can not Cast an ability at the moment\nyou need more "+(currentEnergy-cost)+" energy");
         else{
@@ -45,9 +45,7 @@ public class Rogue extends Player implements HeroicUnit {
                 }
             }
             IsAttackkPointsAttack=false;
-            return true;
         }
-        return false;
     }
 
     @Override

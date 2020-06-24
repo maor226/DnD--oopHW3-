@@ -57,9 +57,13 @@ public abstract class Player extends Unit implements HeroicUnit {
 
      public abstract void GameTick();
 
-    public void Hit(Integer attack) {
-        int hit=rollDefence()-attack;
-        if(hit<0)health.ChangeAmount(hit);
+    public void Hit(Integer attack,String name) {
+        int defence = rollDefence();
+        int hit=defence-attack;
+        if(hit<0) {
+            health.ChangeAmount(hit);
+            NotifyObserver(name + " attacked " + getName() + " you rolled " + defence + " defence points and " + name + "rolled " + attack +" attack, so you are hit for "+ (-hit));
+        }
     }
 
     public void gainExprerience(int exp)
