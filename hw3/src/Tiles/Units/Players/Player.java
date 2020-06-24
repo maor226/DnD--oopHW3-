@@ -45,8 +45,7 @@ public abstract class Player extends Unit implements HeroicUnit {
         return u.accept(this);
     }
 
-    public boolean accept(Enemy e)
-    {
+    public boolean accept(Enemy e){
         Attack(e);
         return false;
     }
