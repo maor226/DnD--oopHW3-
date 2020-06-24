@@ -4,6 +4,7 @@ import Tiles.Units.Enemies.Boss;
 import Tiles.Units.Enemies.Enemy;
 import Tiles.Units.Enemies.Monster;
 import Tiles.Units.Enemies.Trap;
+import Tiles.Units.Observer;
 import Tiles.Units.Players.Player;
 import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
 
@@ -15,8 +16,14 @@ public class Board {
     private List<Enemy> enemies;
     private Player player;
     private  Point playerPos;
+    private Observer observer;
 
-    public Board(char[][] tiles, Player player) {
+    private Board(Observer o){
+        this.observer=o;
+    }
+
+    public Board(char[][] tiles, Player player,Observer o) {
+        this(o);
         this.enemies = new ArrayList<Enemy>() ;
         this.player = player;
         this.tiles = new Tile[tiles.length][tiles[0].length];
@@ -26,7 +33,8 @@ public class Board {
             }
         }
     }
-    public Board(char[][] tiles,Point playerPosition) {
+    public Board(char[][] tiles,Point playerPosition,Observer o) {
+        this(o);
         this.enemies = new ArrayList<Enemy>() ;
         this.playerPos = playerPosition;
         this.tiles = new Tile[tiles.length][tiles[0].length];
@@ -41,7 +49,10 @@ public class Board {
         Enemy e=null;
         switch(c){
             case '@':
-                player.position=position;
+                if(player!=null) {
+                    player.position = position;
+                    player.setObserver(observer);
+                }
                 return player;
             case '#':
                 return new Wall(position);
@@ -73,8 +84,10 @@ public class Board {
             case 'D':e=new Trap(1,10,c,position,"Death Trap",500,500,100,20,250);
                 break;
         }
-        if(e!=null)
+        if(e!=null){
             enemies.add(e);
+            e.setObserver(observer);
+        }
         return e;
     }
 

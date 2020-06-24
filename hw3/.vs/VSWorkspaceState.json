@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\Tiles",
+    "\\src\\Tiles\\Units",
+    "\\src\\Tiles\\Units\\Enemies",
+    "\\src\\Tiles\\Units\\Players"
+  ],
+  "SelectedNode": "\\src\\Tiles\\Units\\Players\\Warrior.java",
+  "PreviewInSolutionExplorer": false
+}
