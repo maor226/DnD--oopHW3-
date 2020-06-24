@@ -78,5 +78,33 @@ public class Main
                 levels[i]=i==0?new Board(boards[i], p,o):new Board(boards[i],p.getPosition(),o);
         }
         GameManager GM=new GameManager(levels);
+
+        boolean isWon=false;
+        while(!isWon && !p.getHealth().isZero())
+        {
+            System.out.println(GM.getBoard().toString());
+            System.out.println("enter a move:");
+            char c = scanner.next().charAt(0);
+            GM.GameTick(c);
+            if(GM.isWon())
+                isWon=true;
+        }
+
+        if (p.getHealth().isZero())
+        {
+            System.out.println(GM.getBoard().toString());
+            System.out.println("sorry you unfortunately died, but you can play again!");
+        }
+        else
+        {
+            System.out.println();
+            System.out.println();
+            System.out.println();
+            System.out.println("----------------------------------------");
+            System.out.println("|                                      |");
+            System.out.println("|      CONGRATULATION YOU WON !!!!     |");
+            System.out.println("|                                      |");
+            System.out.println("----------------------------------------");
+        }
     }
 }

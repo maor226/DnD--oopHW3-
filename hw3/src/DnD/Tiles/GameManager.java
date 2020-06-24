@@ -16,6 +16,14 @@ public class GameManager {
     public void GameTick(Character c){
         board.PlayerTick(c);
         board.EnemyTick();
+        if (board.isLevelFinished())
+        {
+            level++;
+            if (level<levels.length) {
+                board = levels[level];
+                board.getPlayer().NotifyObserver("congratulation! you are continuing to the next level!");
+            }
+        }
     }
 
     public void NextLevel(){
@@ -50,6 +58,15 @@ public class GameManager {
                    "-------------------------------------------------------------------------------------------\n";
     }
 
+    public boolean isWon()
+    {
+        return level>=levels.length;
+    }
+
+    public Board getBoard()
+    {
+        return board;
+    }
 
 
 }

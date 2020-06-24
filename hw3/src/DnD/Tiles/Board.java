@@ -202,6 +202,10 @@ import java.util.List;
             return null;
         }
 
+        public boolean isLevelFinished()
+        {
+            return (enemies.size()==0);
+        }
         @Override
         public String toString()
         {
