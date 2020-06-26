@@ -117,10 +117,10 @@ import java.util.List;
             return true;
         }
 
-        public void DeadUnit(Point p)
-        {
-            tiles[p.getX()][p.getY()] = new Empty(new Point(p.getX(),p.getY()));
-        }
+//        public void DeadUnit(Point p)
+//        {
+//            tiles[p.getX()][p.getY()] = new Empty(new Point(p.getX(),p.getY()));
+//        }
 
         public void DeadPlayer(Point p) {
             tiles[p.getX()][p.getY()].setTile('X');
@@ -188,7 +188,6 @@ import java.util.List;
                 if (e.getHealth().isZero()) {
                     player.NotifyObserver("" + player.getName() + " gained " + e.getExperienceValue() + " experience points");
                     player.gainExperience(e.getExperienceValue());
-                    DeadUnit(e.getPosition());
                     enemies.remove(e);
                     i--;
                 }

@@ -43,8 +43,8 @@ public class Trap extends Enemy {
 
     @Override
     public boolean accept(Player p) {
-         p.Attack(this);
-        return false;
+        p.Attack(this);
+        return getHealth().isZero();
     }
 
     @Override

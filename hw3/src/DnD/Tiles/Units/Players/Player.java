@@ -51,8 +51,14 @@ public abstract class Player extends Unit implements HeroicUnit {
     {
         int attack = rollAttack();
         int defence = e.rollDefence();
-        e.Hit(attack-defence);
-        NotifyObserver(getName() +" attacked " + e.getName() +" rolled attack: + "+attack+" and enemy rolled defence " + defence + " and you hit the enemy for " + (attack-defence));
+        if(e.getHealth().getAmount()<=(attack-defence)){
+            e.Hit(e.getHealth().getAmount());
+            NotifyObserver(getName() + " attacked " + e.getName() + " rolled attack: + " + attack + " and enemy rolled defence " + defence + " and you defeated the enemy");
+        }
+        else {
+            e.Hit(attack - defence);
+            NotifyObserver(getName() + " attacked " + e.getName() + " rolled attack: + " + attack + " and enemy rolled defence " + defence + " and you hit the enemy for " + (attack - defence));
+        }
     }
 
      public abstract void GameTick();
