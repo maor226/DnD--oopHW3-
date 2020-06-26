@@ -32,6 +32,11 @@ public class Rogue extends Player implements HeroicUnit {
     }
 
     @Override
+    public String GetInfo() {
+        return super.GetInfo()+"";
+    }
+
+    @Override
     public void CastAbility(Board board) {
         if(currentEnergy<cost)
             NotifyObserver("Can not Cast an ability at the moment\nyou need more "+(currentEnergy-cost)+" energy");
@@ -45,12 +50,15 @@ public class Rogue extends Player implements HeroicUnit {
                 }
             }
             IsAttackkPointsAttack=false;
+            NotifyObserver(name + " casted his ability and hit "+enemies.size()+" enemies around him");
         }
     }
 
     @Override
     public void Attack(Enemy e) {
-        e.Hit((IsAttackkPointsAttack? attackPoints:rollAttack())-e.rollDefence());
+        int attack=(IsAttackkPointsAttack? attackPoints:rollAttack()),defence=e.rollDefence();
+        e.Hit(attack-defence);
+        NotifyObserver(getName()  + " attacked " +e.getName() + " you rolled " + attack + " attack points and " + e.getName() + "rolled " + defence +" defence, so you hit for "+ (attack-defence));
     }
 
     //------------------getters-----------------------

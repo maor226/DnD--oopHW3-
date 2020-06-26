@@ -28,7 +28,7 @@ public class Trap extends Enemy {
         else
             ticksCount++;
 
-        if (position.Range(p.getPosition())<2)
+        if (p!=null && position.Range(p.getPosition())<2)
         {
            p.Hit(rollAttack(),getName());
         }
@@ -37,11 +37,13 @@ public class Trap extends Enemy {
 
     @Override
     public int getVisionRange() {
-        return 0;
+        return 2;
     }
 
-    public boolean accept(Unit u)
-    {
+
+    @Override
+    public boolean accept(Player p) {
+         p.Attack(this);
         return false;
     }
 
@@ -50,4 +52,5 @@ public class Trap extends Enemy {
         if(visible)return super.getTile();
         else return Empty.EmptyTile;
     }
+
 }

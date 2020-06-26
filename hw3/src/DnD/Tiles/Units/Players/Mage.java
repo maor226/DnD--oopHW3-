@@ -41,25 +41,31 @@ public class Mage extends Player implements HeroicUnit {
 
     @Override
     public void CastAbility(Board board) {
-        if(mana.getAmount()<manaCost)
+        if(mana.getAmount()<manaCost) {
             NotifyObserver("Can not Cast an ability at the moment" +
                     "\n you need more "+(manaCost-mana.getAmount())+" mana");
-        else{
+        } else{
             mana.ChangeAmount(-manaCost);
             List<Enemy> enemies =board.getEnemies(position,abilityRange);
             IsSpellAttack=true;
+            int hit = 0;
             if(enemies.size()>0){
-                for (int hit = 0; hit < hitsCount; hit++) {
-                    Attack(enemies.get(Math.toIntExact(Math.round(Math.random() * enemies.size()))));
+                for (; hit < hitsCount&&enemies.size()>0; hit++) {
+                    Enemy e=enemies.get(Math.toIntExact(Math.round(Math.random() * (enemies.size()-1))));
+                    enemies.remove(e);
+                    Attack(e);
                 }
             }
             IsSpellAttack=false;
+            NotifyObserver(name + " casted his ability and hit "+hit);
         }
     }
 
     @Override
     public void Attack(Enemy e) {
-        e.Hit((IsSpellAttack? spellPower:rollAttack())-e.rollDefence());
+        int attack=(IsSpellAttack? spellPower:rollAttack()),defence=e.rollDefence();
+        e.Hit(attack-defence);
+        NotifyObserver(getName()  + " attacked " +e.getName() + " you rolled " + attack + " attack points and " + e.getName() + "rolled " + defence +" defence, so you hit for "+ (attack-defence));
     }
 
     //------------------getters-----------------------

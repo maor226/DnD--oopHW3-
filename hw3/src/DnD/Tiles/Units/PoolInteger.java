@@ -54,4 +54,9 @@ public class PoolInteger {
     {
         return amount==0;
     }
+
+    @Override
+    public String toString() {
+        return amount+"/"+pool;
+    }
 }

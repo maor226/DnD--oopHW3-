@@ -27,9 +27,8 @@ import java.util.List;
                 }
             }
         }
-        public Board(char[][] tiles,Point playerPosition,Observer o) {
+        public Board(char[][] tiles,Observer o) {
             this.enemies = new ArrayList<Enemy>() ;
-            this.playerPos = playerPosition;
             this.tiles = new Tile[tiles.length][tiles[0].length];
             for (int i = 0; i < tiles.length; i++) {
                 for (int j = 0; j < tiles[i].length; j++) {
@@ -46,10 +45,14 @@ import java.util.List;
                         player.position = position;
                         player.setObserver(observer);
                     }
+                    else
+                        this.playerPos = position;
                     return player;
                 case '#':
                     return new Wall(position);
-                case '.':return new Empty(position);
+                case '.':
+                    return new Empty(position);
+                //new Enemy so need to be Added to the enemy list
                 case 's':e=new Monster(c,position,"Lannister Solider",80,80,8,3,25,3);
                     break;
                 case 'k':e=new Monster(c,position,"Lannister Knight",200,200,14,8,50,4);
@@ -72,7 +75,7 @@ import java.util.List;
                     break;
                 case 'B':e=new Trap(1,5,c,position,"Bonus Trap",1,1,1,1,250);
                     break;
-                case 'Q':e=new Trap(3,7,c,position,"Queen's Trap",250,250,250,20,100);
+                case 'Q':e=new Trap(3,7,c,position,"Queen's Trap",250,250,50,10,100);
                     break;
                 case 'D':e=new Trap(1,10,c,position,"Death Trap",500,500,100,20,250);
                     break;
@@ -88,9 +91,9 @@ import java.util.List;
             switch(c)
             {
                 case 'd': return tiles[p.getX()][p.getY()+1];
-                case 's': return tiles[p.getX()-1][p.getY()];
+                case 's': return tiles[p.getX()+1][p.getY()];
                 case 'a': return tiles[p.getX()][p.getY()-1];
-                case 'w': return tiles[p.getX()+1][p.getY()];
+                case 'w': return tiles[p.getX()-1][p.getY()];
                 case 'q': return null;
             }
             return null;
@@ -98,17 +101,18 @@ import java.util.List;
 
         public void Switch(Tile t1,Tile t2) /**switches between to tiles**/
         {
-            tiles[t1.getPosition().getX()][t1.getPosition().getY()]=t2;
-            tiles[t2.getPosition().getX()][t2.getPosition().getY()]=t1;
+            Tile tmp = tiles[t1.getPosition().getX()][t1.getPosition().getY()];
+            tiles[t1.getPosition().getX()][t1.getPosition().getY()] =tiles[t2.getPosition().getX()][t2.getPosition().getY()];
+            tiles[t2.getPosition().getX()][t2.getPosition().getY()]=tmp;
         }
 
         public Tile[][] getTiles() { return tiles;}
 
         public boolean possibleMove(int x,int y) /**checking you're not trying to move outside bounds**/
         {
-            if(x>tiles[0].length || x<0)
+            if(x>=tiles.length || x<0)
                 return false;
-            else if (y>tiles[1].length || y<0)
+            else if (y>=tiles[0].length || y<0)
                 return false;
             return true;
         }
@@ -147,15 +151,20 @@ import java.util.List;
         public void PlayerTick(Character c)
         {
             boolean movable=false;
-            switch( getDirection(c))
+            Direction direction=getDirection(c),reDirection=Direction.None;
+            switch(direction)
             {
                 case Right: movable = possibleMove(getPlayer().getPosition().getX(),getPlayer().getPosition().getY()+1);
+               reDirection=Direction.Left;
                     break;
-                case Down: movable = possibleMove(getPlayer().getPosition().getX()-1,getPlayer().getPosition().getY());
+                case Down: movable = possibleMove(getPlayer().getPosition().getX()+1,getPlayer().getPosition().getY());
+                reDirection=Direction.Up;
                     break;
                 case Left: movable = possibleMove(getPlayer().getPosition().getX(),getPlayer().getPosition().getY()-1);
+                reDirection=Direction.Right;
                     break;
-                case Up: movable = possibleMove(getPlayer().getPosition().getX()+1,getPlayer().getPosition().getY());
+                case Up: movable = possibleMove(getPlayer().getPosition().getX()-1,getPlayer().getPosition().getY());
+                reDirection=Direction.Down;
                     break;
                 case None: movable = false;
                     break;
@@ -163,20 +172,29 @@ import java.util.List;
                     break;
             }
             if (movable) {
-                getPlayer().Interact(GetTileDirection(getPlayer().getPosition(), c));
+                Tile t=GetTileDirection(getPlayer().getPosition(), c);
+                if(getPlayer().Interact(t)){
+                    Switch(player,t);
+                    player.position.Move(direction);
+                    t.position.Move(reDirection);
+                }
             }
             getPlayer().GameTick();
         }
         public void EnemyTick()
         {
-            for (Enemy e : getEnemies())
-                if(e.getHealth().isZero()) {
-                    player.NotifyObserver( "" + player.getName() +" gained "+ e.getExperienceValue()+" experience points");
-                    player.gainExprerience(e.getExperienceValue());
-                    getEnemies().remove(e);
+            for (int i=0;i<enemies.size();i++) {
+                Enemy e = enemies.get(i);
+                if (e.getHealth().isZero()) {
+                    player.NotifyObserver("" + player.getName() + " gained " + e.getExperienceValue() + " experience points");
+                    player.gainExperience(e.getExperienceValue());
                     DeadUnit(e.getPosition());
+                    enemies.remove(e);
+                    i--;
                 }
-                else if (e.getPosition().Range(getPlayer().getPosition())<e.getVisionRange())
+            }
+            for (Enemy e : getEnemies())
+                if (e.getPosition().Range(getPlayer().getPosition())<e.getVisionRange())
                     e.GameTick(getPlayer(),this);
                 else
                     e.GameTick(null,this);
@@ -199,7 +217,7 @@ import java.util.List;
                 case 'q':
                     return Direction.None;
             }
-            return null;
+            return Direction.None;
         }
 
         public boolean isLevelFinished()
@@ -212,11 +230,17 @@ import java.util.List;
             StringBuilder sb = new StringBuilder();
             for(int i=0; i<tiles.length;i++)
             {
-                for(int j=0;j<tiles[0].length;i++)
+                for(int j=0;j<tiles[i].length;j++)
                 {
-                    sb.append(tiles[i][j].getTile());
+
+                    sb.append(tiles[i][j]!=null?tiles[i][j].getTile():"%");
                 }
+                sb.append("\n");
             }
+            sb.append("\n");
+           sb.append(player.GetInfo());
             return sb.toString();
+
+
         }
     }

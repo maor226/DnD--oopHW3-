@@ -9,22 +9,24 @@ public class Point {
         this.y = y;
     }
 
-    public void MoveUp(Integer step) {
-        x += step;
-    }
 
-    public void MoveDown(Integer step) {
-        x -= step;
-    }
 
-    public void MoveRight(Integer step) {
-        y += step;
+    public void Move(Direction direction){
+        switch (direction){
+            case Up:
+                x--;
+                break;
+            case Down:
+                x++;
+                break;
+            case Left:
+                y--;
+                break;
+            case Right:
+                y++;
+                break;
+        }
     }
-
-    public void MoveLeft(Integer step) {
-        y -= step;
-    }
-
 
     public Integer getX() {
         return x;

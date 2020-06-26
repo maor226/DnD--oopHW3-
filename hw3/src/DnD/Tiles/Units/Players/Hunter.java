@@ -18,6 +18,7 @@ public class Hunter extends Player implements HeroicUnit {
         super(position, name, healthPool, attackPoints, defencePoints);
         this.range = range;
         ticksCount=0;
+        arrowsCount=10;
     }
 
     public void LevelUp(){
@@ -41,6 +42,11 @@ public class Hunter extends Player implements HeroicUnit {
     }
 
     @Override
+    public String GetInfo() {
+        return super.GetInfo()+" Range: "+range+" Arrows: "+arrowsCount;
+    }
+
+    @Override
     public void CastAbility(Board board) {
        if(arrowsCount==0) NotifyObserver("Can not Cast an ability at the moment\nyou have 0 arrows\r you can cast in:\t"+(10-ticksCount));
        else{
@@ -56,13 +62,16 @@ public class Hunter extends Player implements HeroicUnit {
                IsAttackkPointsAttack=true;
                Attack(closest);
                IsAttackkPointsAttack=false;
+               NotifyObserver(name + " casted his ability");
            }
        }
     }
 
     @Override
     public void Attack(Enemy e) {
-        e.Hit((IsAttackkPointsAttack? attackPoints:rollAttack())-e.rollDefence());
+        int attack=(IsAttackkPointsAttack? attackPoints:rollAttack()),defence=e.rollDefence();
+        e.Hit(attack-defence);
+        NotifyObserver(getName()  + " attacked " +e.getName() + " you rolled " + attack + " attack points and " + e.getName() + "rolled " + defence +" defence, so you hit for "+ (attack-defence));
     }
 
     //------------------getters-----------------------

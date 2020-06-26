@@ -49,8 +49,9 @@ public class Warrior extends Player implements HeroicUnit
             health.ChangeAmount(10*rollDefence());
             List<Enemy> enemies =board.getEnemies(position,3);
             if(enemies.size()>0){
-                enemies.get(Math.toIntExact(Math.round(Math.random() * enemies.size()))).Hit(health.getPool()/10);
+                enemies.get(Math.toIntExact(Math.round(Math.random() * (enemies.size()-1)))).Hit(health.getPool()/10);
             }
+            NotifyObserver(name + " casted his ability");
         }
     }
 

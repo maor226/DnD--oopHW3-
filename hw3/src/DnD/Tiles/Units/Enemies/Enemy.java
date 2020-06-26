@@ -1,6 +1,7 @@
 package DnD.Tiles.Units.Enemies;
 
 import DnD.Tiles.Board;
+import DnD.Tiles.Direction;
 import DnD.Tiles.Point;
 import DnD.Tiles.Tile;
 import DnD.Tiles.Units.Players.Player;
@@ -15,6 +16,10 @@ public abstract class Enemy extends Unit {
         this.experienceValue = experienceValue;
     }
     public abstract void GameTick(Player p, Board board);
+    public boolean accept(Unit u)
+    {
+        return u.accept(this);
+    }
 
     @Override
     public void Print() {
@@ -32,46 +37,46 @@ public abstract class Enemy extends Unit {
     public void move(Board board, String direction) {
             boolean moveable;
             if (direction.equals("right")) {
-                if (board.possibleMove(position.getX() + 1, position.getY())) { /**not out of bounds**/
-                    Tile move = board.getTiles()[position.getX() + 1][position.getY()]; /**gets the tile to interact to**/
+                if (board.possibleMove(position.getX() , position.getY()+1)) { /**not out of bounds**/
+                    Tile move = board.getTiles()[position.getX() ][position.getY()+1]; /**gets the tile to interact to**/
                     moveable = Interact(move); /**interaction brings if you can move there or not(empty,wall,player,another unit and so...)**/
                     if (moveable) {/**if you can move there**/
-                        this.getPosition().MoveRight(1); /**move their position object**/
-                        move.getPosition().MoveLeft(1);
                         board.Switch(this, move);/**switch their places in the board**/
+                        this.getPosition().Move(Direction.Right); /**move their position object**/
+                        move.getPosition().Move(Direction.Left);
                     }
                 }
             } else if (direction.equals("left")) {
-                if (board.possibleMove(position.getX() - 1, position.getY())) {
-                    Tile move = board.getTiles()[position.getX() - 1][position.getY()];
+                if (board.possibleMove(position.getX(), position.getY()-1)) {
+                    Tile move = board.getTiles()[position.getX()][position.getY()-1];
                     moveable = Interact(move);
                     if (moveable) {
-                        this.getPosition().MoveLeft(1); /**move their position object**/
-                        move.getPosition().MoveRight(1);
                         board.Switch(this, move);
+                        this.getPosition().Move(Direction.Left); /**move their position object**/
+                        move.getPosition().Move(Direction.Right);
                     }
                 }
             } else if (direction.equals("up"))
             {
-                if (board.possibleMove(position.getX(), position.getY() + 1)) {
-                    Tile move = board.getTiles()[position.getX()][position.getY() + 1];
+                if (board.possibleMove(position.getX()-1, position.getY())) {
+                    Tile move = board.getTiles()[position.getX()-1][position.getY()];
                     moveable = Interact(move);
                     if (moveable) {
-                        this.getPosition().MoveUp(1); /**move their position object**/
-                        move.getPosition().MoveDown(1);
                         board.Switch(this, move);
+                        this.getPosition().Move(Direction.Up); /**move their position object**/
+                        move.getPosition().Move(Direction.Down);
                     }
                 }
             }
             else
             {
-                if (board.possibleMove(position.getX(), position.getY() - 1)) {
-                    Tile move = board.getTiles()[position.getX() + 1][position.getY() - 1];
+                if (board.possibleMove(position.getX()+1, position.getY())) {
+                    Tile move = board.getTiles()[position.getX() + 1][position.getY()];
                     moveable = Interact(move);
                     if (moveable) {
-                        this.getPosition().MoveDown(1); /**move their position object**/
-                        move.getPosition().MoveUp(1);
                         board.Switch(this, move);
+                        this.getPosition().Move(Direction.Down); /**move their position object**/
+                        move.getPosition().Move(Direction.Up);
                     }
                 }
             }

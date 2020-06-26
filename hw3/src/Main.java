@@ -23,7 +23,7 @@ public class Main
         int x = scanner.nextInt();
 
         /**setting up the observer the tiles and the player**/
-        Observer o = message -> System.out.println(message);
+        Observer o = message -> System.out.println("\033[0;32m"+message+"\033[0m");
         Player p = null;
         switch (x) {
             case 1:
@@ -53,13 +53,14 @@ public class Main
         char[][][] boards=null;
         /**getting the board data and setting up position for enemies and the player**/
         try {
-            List<String> levels = Files.list(Paths.get(args[0])).sorted().map(Path::toString).collect(Collectors.toList());
+          //  List<String> levels = Files.list(Paths.get(args[0])).sorted().map(Path::toString).collect(Collectors.toList());
+            List<String> levels = Files.list(Paths.get("C:\\Users\\ntur4\\OneDrive\\Desktop\\semester bet\\OPP\\OOP-hw3\\hw3\\src\\Levels")).sorted().map(Path::toString).collect(Collectors.toList());
             boards = new char[levels.size()][][];
             for (String levelPath : levels) {
                 List<String> levelData = Files.readAllLines(Paths.get(levelPath));
                 boards[i] = new char[levelData.size()][levelData.get(0).length()];
                 for (String s : levelData) {
-                    for (int k = 0; k < levelData.size(); k++) {
+                    for (int k = 0; k < s.length(); k++) {
                         boards[i][j][k] = levelData.get(j).charAt(k);
                     }
                     j++;
@@ -75,7 +76,7 @@ public class Main
         if (boards != null) {
            levels=new Board[boards.length];
             for (i = 0; i < boards.length; i++)
-                levels[i]=i==0?new Board(boards[i], p,o):new Board(boards[i],p.getPosition(),o);
+                levels[i]=i==0?new Board(boards[i], p,o):new Board(boards[i],o);
         }
         GameManager GM=new GameManager(levels);
 

@@ -66,15 +66,14 @@ public abstract class Player extends Unit implements HeroicUnit {
         }
     }
 
-    public void gainExprerience(int exp)
+    public void gainExperience(int exp)
     {
-        if(experience + exp >= 50*level)
-        {
-            exp = exp - (50*level-experience);
-            LevelUp();
-            gainExprerience(exp);
-        }
-        experience+=exp;
+      experience+=exp;
+      while (experience>=50*level)
+          LevelUp();
     }
 
+    public String GetInfo(){
+      return  "Level: "+level+" EP: "+experience+"/"+level*50+" Health: "+health+" Attack: "+attackPoints+" Defense: "+defencePoints;
+    }
 }

@@ -15,21 +15,21 @@ public class Monster extends Enemy {
 
     @Override
     public void GameTick(Player p, Board board) {
-        String direction = null;
+        String direction;
             if (p!=null)
             {
                 int dx = position.getX() - p.getPosition().getX();
                 int dy = position.getY() - p.getPosition().getY();
                 if(Math.abs(dx)>Math.abs(dy))
                     if (dx>0)
-                        direction="left";
-                    else
-                        direction="right";
-                else
-                    if(dx>0)
                         direction="up";
                     else
                         direction="down";
+                else
+                    if(dy>0)
+                        direction="left";
+                    else
+                        direction="right";
             }
             else
             {
@@ -42,7 +42,7 @@ public class Monster extends Enemy {
                         break;
                     case 2: direction = "left";
                         break;
-                    case 3: direction = "right";
+                    default: direction = "right";
                         break;
                 }
             }
@@ -58,18 +58,16 @@ public class Monster extends Enemy {
         return visionRange;
     }
 
-     public boolean accept(Unit u)
-     {
-         return u.accept(this);
-     }
-     public boolean accept(Player p){
-         AttackPlayer(p);
-         return false;
-     }
-     public boolean accept(Enemy e)
-     {
-         return false;
-     }
+    @Override
+    public boolean accept(Player p){
+        AttackPlayer(p);
+        return false;
+    }
+    @Override
+    public boolean accept(Enemy e)
+    {
+        return false;
+    }
 
 
 
