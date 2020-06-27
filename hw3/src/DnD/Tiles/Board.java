@@ -67,7 +67,7 @@ import java.util.List;
                     break;
                 case 'w':e=new Monster(c,position,"White Walker",2000,2000,150,50,1000,6);
                     break;
-                case 'M':e=new Boss(c,position,"The Mountain ’",1000,1000,60,25,500,6);
+                case 'M':e=new Boss(c,position,"The Mountain",1000,1000,60,25,500,6);
                     break;
                 case 'C':e=new Boss(c,position,"Queen Cersei",100,100,10,10,1000,1);
                     break;
@@ -117,10 +117,10 @@ import java.util.List;
             return true;
         }
 
-//        public void DeadUnit(Point p)
-//        {
-//            tiles[p.getX()][p.getY()] = new Empty(new Point(p.getX(),p.getY()));
-//        }
+        public void DeadUnit(Point p)
+        {
+            tiles[p.getX()][p.getY()] = new Empty(new Point(p.getX(),p.getY()));
+        }
 
         public void DeadPlayer(Point p) {
             tiles[p.getX()][p.getY()].setTile('X');
@@ -189,6 +189,7 @@ import java.util.List;
                     player.NotifyObserver("" + player.getName() + " gained " + e.getExperienceValue() + " experience points");
                     player.gainExperience(e.getExperienceValue());
                     enemies.remove(e);
+                    DeadUnit(e.position);
                     i--;
                 }
             }

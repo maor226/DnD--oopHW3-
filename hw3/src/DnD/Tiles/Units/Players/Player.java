@@ -44,7 +44,7 @@ public abstract class Player extends Unit implements HeroicUnit {
 
     public boolean accept(Enemy e){
         Attack(e);
-        return false;
+         return e.getHealth().isZero();
     }
 
     public void Attack(Enemy e)
@@ -68,7 +68,10 @@ public abstract class Player extends Unit implements HeroicUnit {
         int hit=defence-attack;
         if(hit<0) {
             health.ChangeAmount(hit);
-            NotifyObserver(name + " attacked " + getName() + " you rolled " + defence + " defence points and " + name + "rolled " + attack +" attack, so you are hit for "+ (-hit));
+            NotifyObserver(name + " attacked " + getName() + " you rolled " + defence + " defence points and " + name + " rolled " + attack +" attack, so you are hit for "+ (-hit));
+        }
+        else{
+            NotifyObserver(name + " tried to attack " + getName() + " and failed");
         }
     }
 

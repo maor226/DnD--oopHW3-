@@ -98,14 +98,13 @@ public class Main
         }
         else
         {
-            System.out.println();
-            System.out.println();
-            System.out.println();
-            System.out.println("----------------------------------------");
-            System.out.println("|                                      |");
-            System.out.println("|      CONGRATULATION YOU WON !!!!     |");
-            System.out.println("|                                      |");
-            System.out.println("----------------------------------------");
+
+            System.out.println("\n\n\n"+
+                    "----------------------------------------"+
+                    "|                                      |"+
+                    "|      CONGRATULATION YOU WON !!!!     |"+
+                    "|                                      |"+
+                    "----------------------------------------");
         }
     }
 }
