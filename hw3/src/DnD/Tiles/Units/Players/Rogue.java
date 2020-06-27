@@ -33,7 +33,7 @@ public class Rogue extends Player implements HeroicUnit {
 
     @Override
     public String GetInfo() {
-        return super.GetInfo()+"";
+        return super.GetInfo()+" energy: "+currentEnergy;
     }
 
     @Override

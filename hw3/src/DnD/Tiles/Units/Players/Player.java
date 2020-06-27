@@ -23,11 +23,6 @@ public abstract class Player extends Unit implements HeroicUnit {
         NotifyObserver(getName() + " Leveled up! up to level "+ level +" now! congratulation!");
     }
 
-    @Override
-    public void Print(){
-        System.out.print("\033[0;32m"+tile+"\033[0m");
-    }
-
     /**----------------------getters and setters-----------------------------**/
     public Integer getExperience() {
         return experience;
