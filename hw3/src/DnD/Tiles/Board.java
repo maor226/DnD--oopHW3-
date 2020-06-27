@@ -7,10 +7,9 @@ import DnD.Tiles.Units.Enemies.Trap;
 import DnD.Tiles.Units.Observer;
 import DnD.Tiles.Units.Players.Player;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-    public class Board {
+public class Board {
         private Tile[][] tiles;
         private List<Enemy> enemies;
         private Player player;
@@ -241,5 +240,14 @@ import java.util.List;
             return sb.toString();
 
 
+        }
+
+         /**constructor for testing**/
+        public Board(Player p,Tile[][] tiles,Enemy e)
+        {
+            player = p;
+            this.tiles =tiles;
+            enemies = new ArrayList<>();
+            enemies.add(e);
         }
     }
