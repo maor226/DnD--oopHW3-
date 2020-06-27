@@ -28,12 +28,14 @@ public class Boss extends Monster implements HeroicUnit {
         else {
             super.GameTick(p, board);
         }
+        combatTicks++;
     }
 
     @Override
     public void CastAbility(Board board) {
         Player player=board.getPlayer();
         player.Hit(attackPoints,getName());
+        NotifyObserver(name+" casted his ability");
     }
 
 

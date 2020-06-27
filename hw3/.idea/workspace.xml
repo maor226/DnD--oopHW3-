@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72a48bf9-650f-4c78-afa1-5f53f5b03935" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tests/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hw3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hw3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Rogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +185,13 @@
       <option name="presentableId" value="LOCAL‎00002" />
       <updated>1592946135770</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL‎00003" summary="רועי אתה מטומטם .... אין שום בעייה על הmaster ילד">
+      <created>1593291263027</created>
+      <option name="number" value="LOCAL‎00003" />
+      <option name="presentableId" value="LOCAL‎00003" />
+      <updated>1593291263027</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,10 +219,11 @@
     <option name="LAST_COMMIT_MESSAGE" value="רועי אתה מטומטם .... אין שום בעייה על הmaster ילד" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1570" y="-85" key="#Project_Structure" timestamp="1593015981115">
-      <screen x="-1920" y="-85" width="1920" height="1040" />
+    <state x="233" y="0" key="#Project_Structure" timestamp="1593288608724">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="-1570" y="-85" key="#Project_Structure/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593015981115" />
+    <state x="233" y="0" key="#Project_Structure/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593288608724" />
     <state x="233" y="0" key="#Project_Structure/0.0.1280.680@0.0.1280.680" timestamp="1589380374694" />
     <state x="-1506" y="90" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593086982179">
       <screen x="-1920" y="-85" width="1920" height="1040" />
@@ -226,26 +237,30 @@
       <screen x="-1920" y="-85" width="1920" height="1040" />
     </state>
     <state x="-1211" y="271" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593087148579" />
-    <state x="-1203" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1593123376243">
+    <state x="-1203" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1593293853824">
       <screen x="-1920" y="-85" width="1920" height="1040" />
     </state>
-    <state x="-1203" y="42" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593123376243" />
+    <state x="-1203" y="42" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593293853824" />
     <state x="478" y="83" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1592945048062" />
     <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1592224110324" />
-    <state x="814" y="363" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1593173982670">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="-902" y="373" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1593086413669">
+      <screen x="-1920" y="-85" width="1920" height="1040" />
     </state>
     <state x="-902" y="373" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593086413669" />
-    <state x="814" y="363" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1593173982670" />
+    <state x="814" y="363" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1536.824@0.0.1536.824" timestamp="1593022367498" />
     <state x="-1212" y="290" width="403" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1593094915774">
       <screen x="-1920" y="-85" width="1920" height="1040" />
     </state>
     <state x="-1212" y="290" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593094915774" />
     <state x="566" y="297" width="403" height="239" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1591972285662" />
-    <state x="-879" y="-69" key="CommitChangelistDialog2" timestamp="1593129585919">
+    <state x="-1642" y="-85" key="#org.jetbrains.kotlin.idea.refactoring.safeDelete.KotlinOverridingDialog" timestamp="1593293642277">
       <screen x="-1920" y="-85" width="1920" height="1040" />
     </state>
-    <state x="-879" y="-69" key="CommitChangelistDialog2/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593129585919" />
+    <state x="-1642" y="-85" key="#org.jetbrains.kotlin.idea.refactoring.safeDelete.KotlinOverridingDialog/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593293642277" />
+    <state x="-879" y="-69" key="CommitChangelistDialog2" timestamp="1593291262418">
+      <screen x="-1920" y="-85" width="1920" height="1040" />
+    </state>
+    <state x="-879" y="-69" key="CommitChangelistDialog2/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593291262418" />
     <state x="456" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1592946134746" />
     <state x="833" y="13" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589381458542" />
     <state width="424" height="466" key="DebuggerActiveHint" timestamp="1593126662617">
@@ -257,26 +272,30 @@
     </state>
     <state x="-887" y="126" key="FileChooserDialogImpl/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593087309805" />
     <state x="826" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589381794348" />
-    <state width="1493" height="59" key="GridCell.Tab.0.bottom" timestamp="1593270673939">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="413" key="GridCell.Tab.0.bottom" timestamp="1593293929273">
+      <screen x="-1920" y="-85" width="1920" height="1040" />
     </state>
-    <state width="1877" height="391" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593129585949" />
-    <state width="1493" height="59" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1593270673939" />
-    <state width="1493" height="59" key="GridCell.Tab.0.center" timestamp="1593270673938">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="413" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593293929273" />
+    <state width="1237" height="64" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593288888740" />
+    <state width="1493" height="535" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591810465940" />
+    <state width="1877" height="413" key="GridCell.Tab.0.center" timestamp="1593293929273">
+      <screen x="-1920" y="-85" width="1920" height="1040" />
     </state>
-    <state width="1877" height="391" key="GridCell.Tab.0.center/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593129585949" />
-    <state width="1493" height="59" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1593270673938" />
-    <state width="1493" height="59" key="GridCell.Tab.0.left" timestamp="1593270673938">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="413" key="GridCell.Tab.0.center/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593293929273" />
+    <state width="1237" height="64" key="GridCell.Tab.0.center/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593288888740" />
+    <state width="1493" height="535" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591810465939" />
+    <state width="1877" height="413" key="GridCell.Tab.0.left" timestamp="1593293929273">
+      <screen x="-1920" y="-85" width="1920" height="1040" />
     </state>
-    <state width="1877" height="391" key="GridCell.Tab.0.left/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593129585949" />
-    <state width="1493" height="59" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1593270673938" />
-    <state width="1493" height="59" key="GridCell.Tab.0.right" timestamp="1593270673938">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1877" height="413" key="GridCell.Tab.0.left/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593293929273" />
+    <state width="1237" height="64" key="GridCell.Tab.0.left/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593288888740" />
+    <state width="1493" height="535" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591810465939" />
+    <state width="1877" height="413" key="GridCell.Tab.0.right" timestamp="1593293929273">
+      <screen x="-1920" y="-85" width="1920" height="1040" />
     </state>
-    <state width="1877" height="391" key="GridCell.Tab.0.right/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593129585949" />
-    <state width="1493" height="59" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1593270673938" />
+    <state width="1877" height="413" key="GridCell.Tab.0.right/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593293929273" />
+    <state width="1237" height="64" key="GridCell.Tab.0.right/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593288888740" />
+    <state width="1493" height="535" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591810465940" />
     <state width="723" height="261" key="GridCell.Tab.1.bottom" timestamp="1591799604527">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -297,10 +316,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591799583702" />
-    <state x="368" y="147" key="Vcs.Push.Dialog.v2" timestamp="1592946411172">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="-1368" y="168" key="Vcs.Push.Dialog.v2" timestamp="1593291264949">
+      <screen x="-1920" y="-85" width="1920" height="1040" />
     </state>
-    <state x="-1368" y="168" key="Vcs.Push.Dialog.v2/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1592936136597" />
+    <state x="-1368" y="168" key="Vcs.Push.Dialog.v2/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593291264949" />
     <state x="368" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1592946411172" />
     <state x="498" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1593267723007">
       <screen x="0" y="0" width="1536" height="824" />
@@ -315,16 +334,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="-28" y="-11" width="1294" height="762" maximized="true" key="dock-window-1/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593123199130" />
-    <state x="209" y="32" key="new project wizard" timestamp="1593267365353">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="209" y="32" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1593267365353" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1593270442385">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1593270442385" />
+
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Trap.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Rogue.java</url>
+          <line>34</line>
+          <properties class="DnD.Tiles.Units.Players.Rogue" method="GetInfo">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="((Board[])((GameManager)this).levels)[2].playerPos" custom="DnD.Tiles.GameManager,DnD.Tiles.Board[]" />

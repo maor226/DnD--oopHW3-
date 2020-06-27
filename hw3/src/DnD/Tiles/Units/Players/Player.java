@@ -23,11 +23,6 @@ public abstract class Player extends Unit implements HeroicUnit {
         NotifyObserver(getName() + " Leveled up! up to level "+ level +" now! congratulation!");
     }
 
-    @Override
-    public void Print(){
-        System.out.print("\033[0;32m"+tile+"\033[0m");
-    }
-
     /**----------------------getters and setters-----------------------------**/
     public Integer getExperience() {
         return experience;
@@ -44,7 +39,7 @@ public abstract class Player extends Unit implements HeroicUnit {
 
     public boolean accept(Enemy e){
         Attack(e);
-        return false;
+         return e.getHealth().isZero();
     }
 
     public void Attack(Enemy e)
@@ -68,7 +63,10 @@ public abstract class Player extends Unit implements HeroicUnit {
         int hit=defence-attack;
         if(hit<0) {
             health.ChangeAmount(hit);
-            NotifyObserver(name + " attacked " + getName() + " you rolled " + defence + " defence points and " + name + "rolled " + attack +" attack, so you are hit for "+ (-hit));
+            NotifyObserver(name + " attacked " + getName() + " you rolled " + defence + " defence points and " + name + " rolled " + attack +" attack, so you are hit for "+ (-hit));
+        }
+        else{
+            NotifyObserver(name + " tried to attack " + getName() + " and failed");
         }
     }
 

@@ -32,7 +32,12 @@ public class Warrior extends Player implements HeroicUnit
         remainingCooldown--;
     }
 
-//------------------getters--------------------------
+    @Override
+    public String GetInfo() {
+        return super.GetInfo()+" can Cast Ability in: "+remainingCooldown+" torn";
+    }
+
+    //------------------getters--------------------------
     public Integer getAbilityCooldown() {
         return abilityCooldown;
     }
@@ -54,6 +59,7 @@ public class Warrior extends Player implements HeroicUnit
             NotifyObserver(name + " casted his ability");
         }
     }
+
 
 
 }

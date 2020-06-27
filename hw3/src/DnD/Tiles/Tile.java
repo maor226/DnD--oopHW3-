@@ -13,10 +13,6 @@ public abstract class Tile {
         this.position = position;
     }
 
-   public void Print(){
-       System.out.print(getTile());
-   }
-
     public Point getPosition() {
         return position;
     }

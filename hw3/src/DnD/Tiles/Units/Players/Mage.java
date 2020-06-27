@@ -40,6 +40,11 @@ public class Mage extends Player implements HeroicUnit {
     }
 
     @Override
+    public String GetInfo() {
+        return super.GetInfo()+"Mana: "+mana+" spellPower: "+spellPower;
+    }
+
+    @Override
     public void CastAbility(Board board) {
         if(mana.getAmount()<manaCost) {
             NotifyObserver("Can not Cast an ability at the moment" +
