@@ -22,14 +22,6 @@ public class PoolInteger {
             setAmount(amount + addition);
     }
 
-    public boolean Use(Integer amount){
-        if(this.amount>=amount){
-            setAmount(this.amount -amount);
-            return true;
-        }
-        return false;
-    }
-
     public Integer getPool() {
         return pool;
     }

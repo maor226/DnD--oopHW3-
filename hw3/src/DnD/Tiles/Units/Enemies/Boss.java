@@ -8,10 +8,11 @@ import DnD.Tiles.Units.Players.Player;
 public class Boss extends Monster implements HeroicUnit {
 
     Integer combatTicks=0;
-    Integer abilityFrequency = 5;
+    Integer abilityFrequency ;
 
-    public Boss(Character tile, Point position, String name, Integer healthPool, Integer healthAmount, Integer attackPoints, Integer defencePoints, Integer experienceValue, Integer visionRange) {
-        super(tile, position, name, healthPool, healthAmount, attackPoints, defencePoints, experienceValue, visionRange);
+    public Boss(Character tile, Point position, String name, Integer healthPool, Integer attackPoints, Integer defencePoints, Integer experienceValue, Integer visionRange, Integer abilityFrequency) {
+        super(tile, position, name, healthPool, attackPoints, defencePoints, experienceValue, visionRange);
+        this.abilityFrequency = abilityFrequency;
     }
 
     @Override

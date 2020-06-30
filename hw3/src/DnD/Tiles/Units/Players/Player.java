@@ -23,15 +23,6 @@ public abstract class Player extends Unit implements HeroicUnit {
         NotifyObserver(getName() + " Leveled up! up to level "+ level +" now! congratulation!");
     }
 
-    /**----------------------getters and setters-----------------------------**/
-    public Integer getExperience() {
-        return experience;
-    }
-
-    public Integer getLevel() {
-        return level;
-    }
-
     public boolean accept(Unit u)
     {
         return u.accept(this);
@@ -79,5 +70,14 @@ public abstract class Player extends Unit implements HeroicUnit {
 
     public String GetInfo(){
       return  "Level: "+level+" EP: "+experience+"/"+level*50+" Health: "+health+" Attack: "+attackPoints+" Defense: "+defencePoints;
+    }
+
+    /**----------------------getters and setters-----------------------------**/
+    public Integer getExperience() {
+        return experience;
+    }
+
+    public Integer getLevel() {
+        return level;
     }
 }

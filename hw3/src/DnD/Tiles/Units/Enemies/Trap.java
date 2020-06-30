@@ -4,7 +4,6 @@ import DnD.Tiles.Board;
 import DnD.Tiles.Empty;
 import DnD.Tiles.Point;
 import DnD.Tiles.Units.Players.Player;
-import DnD.Tiles.Units.Unit;
 
 public class Trap extends Enemy {
     private Integer visibilityTime;
@@ -12,8 +11,8 @@ public class Trap extends Enemy {
     private Integer ticksCount;
     private boolean visible;
 
-    public Trap(Integer visibilitytime, Integer invisibilitytime, Character tile, Point position, String name, Integer healthPool, Integer healthAmount, Integer attackPoints, Integer defencePoints, Integer experienceValue) {
-        super(tile,position,name,healthPool,healthAmount,attackPoints,defencePoints,experienceValue);
+    public Trap(Integer visibilitytime, Integer invisibilitytime, Character tile, Point position, String name, Integer healthPool, Integer attackPoints, Integer defencePoints, Integer experienceValue) {
+        super(tile,position,name,healthPool, attackPoints,defencePoints,experienceValue);
         visibilityTime=visibilitytime;
         invisibilityTime=invisibilitytime;
         ticksCount=0;

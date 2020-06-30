@@ -3,13 +3,12 @@ package DnD.Tiles.Units.Enemies;
 import DnD.Tiles.Board;
 import DnD.Tiles.Point;
 import DnD.Tiles.Units.Players.Player;
-import DnD.Tiles.Units.Unit;
 
 public class Monster extends Enemy {
     protected Integer visionRange;
 
-    public Monster(Character tile, Point position, String name, Integer healthPool, Integer healthAmount, Integer attackPoints, Integer defencePoints, Integer experienceValue, Integer visionRange) {
-        super(tile, position, name, healthPool, healthAmount, attackPoints, defencePoints, experienceValue);
+    public Monster(Character tile, Point position, String name, Integer healthPool, Integer attackPoints, Integer defencePoints, Integer experienceValue, Integer visionRange) {
+        super(tile, position, name, healthPool, attackPoints, defencePoints, experienceValue);
         this.visionRange = visionRange;
     }
 

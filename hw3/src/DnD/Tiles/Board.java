@@ -52,31 +52,31 @@ public class Board {
                 case '.':
                     return new Empty(position);
                 //new Enemy so need to be Added to the enemy list
-                case 's':e=new Monster(c,position,"Lannister Solider",80,80,8,3,25,3);
+                case 's':e=new Monster(c,position,"Lannister Solider",80, 8,3,25,3);
                     break;
-                case 'k':e=new Monster(c,position,"Lannister Knight",200,200,14,8,50,4);
+                case 'k':e=new Monster(c,position,"Lannister Knight",200, 14,8,50,4);
                     break;
-                case 'q':e=new Monster(c,position,"Queen’s Guard",400,400,20,15,100,5);
+                case 'q':e=new Monster(c,position,"Queen’s Guard",400, 20,15,100,5);
                     break;
-                case 'z':e=new Monster(c,position,"Wright",600,600,30,15,100,3);
+                case 'z':e=new Monster(c,position,"Wright",600, 30,15,100,3);
                     break;
-                case 'b':e=new Monster(c,position,"Bear-Wright",1000,1000,75,30,250,4);
+                case 'b':e=new Monster(c,position,"Bear-Wright",1000, 75,30,250,4);
                     break;
-                case 'g':e=new Monster(c,position,"Giant-Wright",1500,1500,100,45,500,5);
+                case 'g':e=new Monster(c,position,"Giant-Wright",1500, 100,45,500,5);
                     break;
-                case 'w':e=new Monster(c,position,"White Walker",2000,2000,150,50,1000,6);
+                case 'w':e=new Monster(c,position,"White Walker",2000, 150,50,1000,6);
                     break;
-                case 'M':e=new Boss(c,position,"The Mountain",1000,1000,60,25,500,6);
+                case 'M':e=new Boss(c,position,"The Mountain",1000, 60,25,500,6,5);
                     break;
-                case 'C':e=new Boss(c,position,"Queen Cersei",100,100,10,10,1000,1);
+                case 'C':e=new Boss(c,position,"Queen Cersei",100, 10,10,1000,1,5);
                     break;
-                case 'K':e=new Boss(c,position,"Night’s King",5000,5000,300,150,5000,8);
+                case 'K':e=new Boss(c,position,"Night’s King",5000, 300,150,5000,8,5);
                     break;
-                case 'B':e=new Trap(1,5,c,position,"Bonus Trap",1,1,1,1,250);
+                case 'B':e=new Trap(1,5,c,position,"Bonus Trap",1, 1,1,250);
                     break;
-                case 'Q':e=new Trap(3,7,c,position,"Queen's Trap",250,250,50,10,100);
+                case 'Q':e=new Trap(3,7,c,position,"Queen's Trap",250, 50,10,100);
                     break;
-                case 'D':e=new Trap(1,10,c,position,"Death Trap",500,500,100,20,250);
+                case 'D':e=new Trap(1,10,c,position,"Death Trap",500, 100,20,250);
                     break;
             }
             if(e!=null){

@@ -29,7 +29,7 @@ public class test {
         };
         t1 = new Empty(new Point(0,0));
         t2 = new Empty(new Point(1,1));
-        e = new Monster('q',new Point(0,1),"testMon",100,100,100,100,100,100);
+        e = new Monster('q',new Point(0,1),"testMon",100, 100,100,100,100);
         Tile[][] tiles = new Tile[][]{{t1,e},{p,t2}};
         b = new Board(p,tiles,e);
     }

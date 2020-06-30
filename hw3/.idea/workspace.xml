@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="hw3:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="72a48bf9-650f-4c78-afa1-5f53f5b03935" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Boss.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Boss.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Mage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Mage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Trap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Trap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Rogue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Warrior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Warrior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DnD/Tiles/Units/PoolInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DnD/Tiles/Units/PoolInteger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CodeInsightWorkspaceSettings">
-    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FavoritesManager">
     <favorites_list name="hw3" />
@@ -26,9 +32,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
+        <option value="Class" />
         <option value="Interface" />
         <option value="Enum" />
-        <option value="Class" />
       </list>
     </option>
   </component>
@@ -46,10 +52,6 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -65,9 +67,19 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.test">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="assignment.Tiles.Main" />
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="hw3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="Unit.Main" />
+      <module name="hw3" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -87,61 +99,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test.GetTileDirectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hw3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.test" />
-      <option name="METHOD_NAME" value="GetTileDirectionTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test.PossibleMoveTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hw3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.test" />
-      <option name="METHOD_NAME" value="PossibleMoveTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="test.SwitchTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="hw3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.test" />
-      <option name="METHOD_NAME" value="SwitchTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.test" />
-        <item itemvalue="JUnit.test.PossibleMoveTest" />
-        <item itemvalue="JUnit.test.GetTileDirectionTest" />
-        <item itemvalue="JUnit.test.SwitchTest" />
         <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -172,6 +134,8 @@
       <workItem from="1592920899008" duration="1840000" />
       <workItem from="1592944823468" duration="8649000" />
       <workItem from="1593086385533" duration="18984000" />
+      <workItem from="1593294753661" duration="1328000" />
+      <workItem from="1593355689148" duration="10379000" />
     </task>
     <task id="LOCAL‎00001" summary="רועי אתה מטומטם .... אין שום בעייה על הmaster ילד">
       <created>1592936127967</created>
@@ -237,12 +201,17 @@
       <screen x="-1920" y="-85" width="1920" height="1040" />
     </state>
     <state x="-1211" y="271" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593087148579" />
-    <state x="-1203" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1593293853824">
-      <screen x="-1920" y="-85" width="1920" height="1040" />
+    <state x="478" y="83" key="#com.intellij.ide.util.MemberChooser" timestamp="1593295510685">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="-1203" y="42" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593293853824" />
+    <state x="478" y="83" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593295510685" />
     <state x="478" y="83" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1592945048062" />
     <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1592224110324" />
+    <state x="491" y="124" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1593294648888">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="491" y="124" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593294648888" />
     <state x="-902" y="373" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1593086413669">
       <screen x="-1920" y="-85" width="1920" height="1040" />
     </state>
@@ -272,29 +241,29 @@
     </state>
     <state x="-887" y="126" key="FileChooserDialogImpl/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593087309805" />
     <state x="826" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1589381794348" />
-    <state width="1877" height="413" key="GridCell.Tab.0.bottom" timestamp="1593293929273">
-      <screen x="-1920" y="-85" width="1920" height="1040" />
+    <state width="1237" height="18" key="GridCell.Tab.0.bottom" timestamp="1593294747829">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="413" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593293929273" />
-    <state width="1237" height="64" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593288888740" />
+    <state width="1237" height="18" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593294747829" />
     <state width="1493" height="535" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591810465940" />
-    <state width="1877" height="413" key="GridCell.Tab.0.center" timestamp="1593293929273">
-      <screen x="-1920" y="-85" width="1920" height="1040" />
+    <state width="1237" height="18" key="GridCell.Tab.0.center" timestamp="1593294747829">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="413" key="GridCell.Tab.0.center/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593293929273" />
-    <state width="1237" height="64" key="GridCell.Tab.0.center/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593288888740" />
+    <state width="1237" height="18" key="GridCell.Tab.0.center/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593294747829" />
     <state width="1493" height="535" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591810465939" />
-    <state width="1877" height="413" key="GridCell.Tab.0.left" timestamp="1593293929273">
-      <screen x="-1920" y="-85" width="1920" height="1040" />
+    <state width="1237" height="18" key="GridCell.Tab.0.left" timestamp="1593294747829">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="413" key="GridCell.Tab.0.left/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593293929273" />
-    <state width="1237" height="64" key="GridCell.Tab.0.left/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593288888740" />
+    <state width="1237" height="18" key="GridCell.Tab.0.left/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593294747829" />
     <state width="1493" height="535" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591810465939" />
-    <state width="1877" height="413" key="GridCell.Tab.0.right" timestamp="1593293929273">
-      <screen x="-1920" y="-85" width="1920" height="1040" />
+    <state width="1237" height="18" key="GridCell.Tab.0.right" timestamp="1593294747829">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state width="1877" height="413" key="GridCell.Tab.0.right/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593293929273" />
-    <state width="1237" height="64" key="GridCell.Tab.0.right/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593288888740" />
+    <state width="1237" height="18" key="GridCell.Tab.0.right/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593294747829" />
     <state width="1493" height="535" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591810465940" />
     <state width="723" height="261" key="GridCell.Tab.1.bottom" timestamp="1591799604527">
       <screen x="0" y="0" width="1536" height="824" />
@@ -312,19 +281,24 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="723" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1591799604526" />
-    <state x="498" y="0" key="SettingsEditor" timestamp="1591799583702">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="695" y="55" key="RollbackChangesDialog" timestamp="1593360130678">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="695" y="55" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1593360130678" />
+    <state x="242" y="0" key="SettingsEditor" timestamp="1593294766399">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="242" y="0" key="SettingsEditor/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593294766399" />
     <state x="498" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591799583702" />
     <state x="-1368" y="168" key="Vcs.Push.Dialog.v2" timestamp="1593291264949">
       <screen x="-1920" y="-85" width="1920" height="1040" />
     </state>
     <state x="-1368" y="168" key="Vcs.Push.Dialog.v2/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593291264949" />
     <state x="368" y="147" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1592946411172" />
-    <state x="498" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1593267723007">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="317" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1593513086952">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="498" y="305" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1536.824@0.0.1536.824" timestamp="1593267723007" />
+    <state x="317" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.680/-1920.-85.1920.1040@0.0.1280.680" timestamp="1593513086952" />
     <state x="-686" y="348" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1592974350184">
       <screen x="-1920" y="-85" width="1920" height="1040" />
     </state>
@@ -334,23 +308,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="-28" y="-11" width="1294" height="762" maximized="true" key="dock-window-1/0.0.1280.680/-1920.-85.1920.1040@-1920.-85.1920.1040" timestamp="1593123199130" />
-
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/DnD/Tiles/Units/Enemies/Trap.java</url>
-          <line>45</line>
+          <line>44</line>
           <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/DnD/Tiles/Units/Players/Rogue.java</url>
-          <line>34</line>
-          <properties class="DnD.Tiles.Units.Players.Rogue" method="GetInfo">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
